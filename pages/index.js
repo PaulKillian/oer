@@ -39,7 +39,6 @@ export default function Home() {
       <option>WINDY</option>
       <option>LUTTY</option>
     </select>
-    <div>{selectCompany.company}</div>
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
     </div>
