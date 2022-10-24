@@ -3,7 +3,8 @@ export const speedway = {
     custNumber: '8238355',
     upsNumber: '635358',
     dropShip: 'DROPSHIP3',
-    notes: 'GROUND: PO# , SHIP UNINSURED, GROUND, PUT PO# IN UPS REFBOX#1. TRUCK FRIEGHT: PO# , SHIPS TRUCK FRIEGHT',
+    ground: 'PO# , SHIP UNINSURED, GROUND, PUT PO# IN UPS REFBOX#1', 
+    truck: 'TRUCK FRIEGHT: PO# , SHIPS TRUCK FRIEGHT',
     po: 'PO#'
   }
 
