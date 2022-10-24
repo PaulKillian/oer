@@ -45,9 +45,11 @@ export default function Home() {
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
     </div>
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
-    </div>
+    {selectCompany.dropShip &&
+      <div id={styles.pointer}
+        onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
+      </div>
+    }
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
     </div>
