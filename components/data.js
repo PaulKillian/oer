@@ -21,7 +21,9 @@ export const windy = {
     custNumber: '8449560',
     upsNumber: 'None',
     dropShip: 'UNDER $100 USE DROPSHIP2. OVER $100 USE DROPSHIP1',
-    po: 'PO#'
+    po: 'PO#',
+    under: 'DROPSHIP2',
+    over: 'DROPSHIP1'
   }
 
 export const luttys = {
