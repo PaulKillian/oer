@@ -20,7 +20,6 @@ export const windy = {
     company: 'WINDY CITY MUSCLE CARS',
     custNumber: '8449560',
     upsNumber: 'None',
-    dropShip: 'UNDER $100 USE DROPSHIP2. OVER $100 USE DROPSHIP1',
     po: 'PO#',
     under: 'DROPSHIP2',
     over: 'DROPSHIP1'
@@ -30,6 +29,5 @@ export const luttys = {
     company: 'LUTTYS CHEVY',
     custNumber: '324040',
     upsNumber: '189743 only use if Requested by cust',
-    dropShip: 'None',
     po: 'PO#'
   }
