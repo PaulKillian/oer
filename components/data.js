@@ -19,7 +19,6 @@ export const rpi = {
 export const windy = {
     company: 'WINDY CITY MUSCLE CARS',
     custNumber: '8449560',
-    upsNumber: 'None',
     po: 'PO#',
     under: 'DROPSHIP2',
     over: 'DROPSHIP1'
