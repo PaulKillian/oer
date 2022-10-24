@@ -51,6 +51,9 @@ export default function Home() {
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
     </div>
+      <div id={styles.pointer}
+      onClick={() =>  copy(selectCompany.notes)}>{selectCompany.notes}
+    </div>
     </>
   );
 }
