@@ -1,11 +1,9 @@
 import * as React from "react";
 import styles from "../styles/Home.module.css";
-
 import { speedway, rpi, windy, luttys, ground, summit } from '../components/data.js'
 
 export default function Home() {
-   const [company, setCompany] = React.useState([]);
-  
+  const [company, setCompany] = React.useState([]);
   
   const handleChange = (e) => {
     switch(e.target.value) {
@@ -32,7 +30,7 @@ export default function Home() {
   }
   
   const upsNumber = () => {
-   if (settCompany.upsNumber) {
+   if (setCompany.upsNumber) {
       console.log(setCompany.upsNumber)
      return (
      <div id={styles.pointer}
