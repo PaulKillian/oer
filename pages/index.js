@@ -4,29 +4,28 @@ import styles from "../styles/Home.module.css";
 import { speedway, rpi, windy, luttys, ground, summit } from '../components/data.js'
 
 export default function Home() {
-   const [selectCompany, setSelectCompany] = React.useState('');
+   const [company, setCompany] = React.useState([]);
   
   
   const handleChange = (e) => {
-     console.log(e.target.value)
     switch(e.target.value) {
       case 'SPEEDWAY':
-        setSelectCompany(speedway)
+        setSelectCompany([speedway])
         break;
       case 'RPI':
-        setSelectCompany(rpi)
+        setSelectCompany([rpi])
         break;
       case 'WINDY':
-        setSelectCompany(windy)
+        setSelectCompany([windy])
         break;
       case 'LUTTY':
-        setSelectCompany(luttys)
+        setSelectCompany([luttys])
         break;
       case 'GROUND':
-        setSelectCompany(ground)
+        setSelectCompany([ground])
         break;
        case 'SUMMIT':
-        setSelectCompany(summit)
+        setSelectCompany([summit])
         break;
       default: ''
     }
@@ -48,12 +47,12 @@ export default function Home() {
       <option>WINDY</option>
     </select>
     <div>
-      {categories.map((category, index) => (
+      {company.map((category, index) => (
          <div 
             key={index}
             className={styles.pointer}
-            onClick={() =>  copy(categories.custNumber)}>
-            Cust#: {categories.custNumber}
+            onClick={() =>  copy(category.custNumber)}>
+            Cust#: {category.custNumber}
          </div>
       ))} 
     </div>
