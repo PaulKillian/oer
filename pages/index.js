@@ -38,12 +38,12 @@ export default function Home() {
   };
    
  const renderCategories = () => {
-   categories.map(category) => {
+   categories.map((category) => {
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.category)}>Cust#: {selectCompany.category}
     </div>
    }
- }
+ });
   
 
   return (
