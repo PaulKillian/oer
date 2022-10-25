@@ -26,6 +26,13 @@ export const speedway = {
     truck: 'PO# , SHIPS TRUCK FRIEGHT',
     po: 'PO#'
   }
+
+export const summit = {
+    custNumber: '706183',
+    dropShip: 'DROPSHIP3',
+    upsNumber: '44958X',
+    po: 'PO#'
+  }
   
 export const windy = {
     custNumber: '8449560',
