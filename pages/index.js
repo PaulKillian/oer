@@ -42,8 +42,8 @@ export default function Home() {
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.category)}>Cust#: {selectCompany.category}
     </div>
-   }
- });
+   })
+ };
   
 
   return (
