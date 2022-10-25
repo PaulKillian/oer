@@ -8,6 +8,7 @@ export default function Home() {
   
   
   const handleChange = (e) => {
+     console.log(e.target.value)
     switch(e.target.value) {
       case 'SPEEDWAY':
         setSelectCompany(speedway)
