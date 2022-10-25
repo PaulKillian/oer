@@ -50,7 +50,7 @@ export default function Home() {
     <div>
       {categories.map((category, index) => (
          <div 
-            id={index}
+            key={index}
             className={styles.pointer}
             onClick={() =>  copy(categories.custNumber)}>
             Cust#: {categories.custNumber}
