@@ -10,22 +10,22 @@ export default function Home() {
   const handleChange = (e) => {
     switch(e.target.value) {
       case 'SPEEDWAY':
-        setSelectCompany([speedway])
+        setCompany([speedway])
         break;
       case 'RPI':
-        setSelectCompany([rpi])
+        setCompany([rpi])
         break;
       case 'WINDY':
-        setSelectCompany([windy])
+        setCompany([windy])
         break;
       case 'LUTTY':
-        setSelectCompany([luttys])
+        setCompany([luttys])
         break;
       case 'GROUND':
-        setSelectCompany([ground])
+        setCompany([ground])
         break;
        case 'SUMMIT':
-        setSelectCompany([summit])
+        setCompany([summit])
         break;
       default: ''
     }
