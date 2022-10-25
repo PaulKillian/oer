@@ -35,7 +35,7 @@ export default function Home() {
       onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
      </div>
    } else {
-     return 
+     return 'N/A'
    }
  }
   
