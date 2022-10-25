@@ -1,4 +1,4 @@
-export const groundUPMotors = {
+export const ground = {
     custNumber: '284546',
     dropShip: 'DROPSHIP1',
     upsNumber: '36Y163',
