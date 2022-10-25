@@ -49,13 +49,13 @@ export default function Home() {
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
     </div>
-    {upsNumber()}
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
     </div>
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
     </div>
+    {upsNumber()}
      <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.ground)}>{selectCompany.ground}
     </div>
