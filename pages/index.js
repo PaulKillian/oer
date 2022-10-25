@@ -54,6 +54,30 @@ export default function Home() {
             onClick={() =>  copy(category.custNumber)}>
             Cust#: {category.custNumber}
          </div>
+         <div 
+            key={index}
+            className={styles.pointer}
+            onClick={() =>  copy(category.dropShip)}>
+            Cust#: {category.custNumber}
+         </div>
+         <div 
+            key={index}
+            className={styles.pointer}
+            onClick={() =>  copy(category.po)}>
+            Cust#: {category.custNumber}
+         </div>
+         <div 
+            key={index}
+            className={styles.pointer}
+            onClick={() =>  copy(category.upsNumber)}>
+            Cust#: {category.custNumber}
+         </div>
+         <div 
+            key={index}
+            className={styles.pointer}
+            onClick={() =>  copy(category.custNumber)}>
+            Cust#: {category.custNumber}
+         </div>
       ))} 
     </div>
     </>
