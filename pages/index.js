@@ -46,42 +46,13 @@ export default function Home() {
       <option>SUMMIT</option>
       <option>WINDY</option>
     </select>
-    <ul>
-      {company.map((category, index) => 
-         <>
-         <li
-            key={index}
-            className={styles.pointer}
-            onClick={() =>  copy(category.custNumber)}>
-            Cust#: {category.custNumber}
-         </li>
-         <li 
-            key={index}
-            className={styles.pointer}
-            onClick={() =>  copy(category.dropShip)}>
-            Cust#: {category.custNumber}
-         </li>
-         <li 
-            key={index}
-            className={styles.pointer}
-            onClick={() =>  copy(category.po)}>
-            Cust#: {category.custNumber}
-         </li>
-         <li 
-            key={index}
-            className={styles.pointer}
-            onClick={() =>  copy(category.upsNumber)}>
-            Cust#: {category.custNumber}
-         </li>
-         <li 
-            key={index}
-            className={styles.pointer}
-            onClick={() =>  copy(category.custNumber)}>
-            Cust#: {category.custNumber}
-         </li>
-      </>
-      ))} 
-    </ul>
-    </>
+    {company.map((category, index) => 
+     <div 
+       key={index}
+       className={styles.pointer}
+       onClick={() =>  copy(category.custNumber)}>
+       Cust#: {category.custNumber}
+     </div>
+   ))} 
   );
 }
