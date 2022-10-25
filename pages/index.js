@@ -47,10 +47,13 @@ export default function Home() {
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
     </div>
-    {selectCompany.dropShip !== undefined &&
+    {if (selectCompany.dropShip !== undefined) {
       <div id={styles.pointer}
         onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
       </div>
+    } else {
+       return
+      }
     }
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
