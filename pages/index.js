@@ -60,7 +60,10 @@ export default function Home() {
 //     <div id={styles.pointer}
 //       onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
 //     </div>
-    {renderCategoies()}
+    <div>
+      {renderCategoies()}  
+    </div>
+    
 //     <div id={styles.pointer}
 //       onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
 //     </div>
