@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "../styles/Home.module.css";
 
-import { speedway, rpi, windy, luttys, ground } from '../components/data.js'
+import { speedway, rpi, windy, luttys, ground, summit } from '../components/data.js'
 
 export default function Home() {
    const [selectCompany, setSelectCompany] = React.useState('');
@@ -24,6 +24,9 @@ export default function Home() {
         break;
       case 'GROUND':
         setSelectCompany(ground)
+        break;
+       case 'SUMMIT':
+        setSelectCompany(summit)
         break;
       default: ''
     }
@@ -55,6 +58,7 @@ export default function Home() {
       <option>LUTTY</option>
       <option>RPI</option>
       <option>SPEEDWAY</option>
+      <option>SUMMIT</option>
       <option>WINDY</option>
     </select>
     <div id={styles.pointer}
