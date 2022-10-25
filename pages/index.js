@@ -48,9 +48,12 @@ export default function Home() {
       <option>WINDY</option>
     </select>
     <div>
-      {categories.map((category) => (
-         <div id={styles.pointer} onClick={() =>  copy(categories.custNumber)}>
-           Cust#: {categories.custNumber}
+      {categories.map((category, index) => (
+         <div 
+            id={index}
+            className={styles.pointer}
+            onClick={() =>  copy(categories.custNumber)}>
+            Cust#: {categories.custNumber}
          </div>
       ))} 
     </div>
