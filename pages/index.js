@@ -30,7 +30,7 @@ export default function Home() {
   };
    
  const upsNumber = () => {
-   if (selectCompany.upsNumber !== undefined) {
+   if (selectCompany.upsNumber) {
      <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
      </div>
