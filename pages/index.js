@@ -32,11 +32,11 @@ export default function Home() {
   }
   
   const upsNumber = () => {
-   if (selectCompany.upsNumber) {
-      console.log(selectCompany.upsNumber)
+   if (settCompany.upsNumber) {
+      console.log(setCompany.upsNumber)
      return (
      <div id={styles.pointer}
-       onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
+       onClick={() =>  copy(setCompany.upsNumber)}>Ups#: {setCompany.upsNumber}
      </div>
     )
    } else {
@@ -60,26 +60,26 @@ export default function Home() {
          <option>WINDY</option>
        </select>
        <div id={styles.pointer}
-         onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
+         onClick={() =>  copy(setCompany.custNumber)}>Cust#: {setCompany.custNumber}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
+         onClick={() =>  copy(setCompany.dropShip)}>{setCompany.dropShip}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
+         onClick={() =>  copy(setCompany.po)}>{setCompany.po}
        </div>
        {upsNumber()}
         <div id={styles.pointer}
-         onClick={() =>  copy(selectCompany.ground)}>{selectCompany.ground}
+         onClick={() =>  copy(setCompany.ground)}>{setCompany.ground}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(selectCompany.truck)}>{selectCompany.truck}
+         onClick={() =>  copy(setCompany.truck)}>{setCompany.truck}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(selectCompany.under)}>Under $100: {selectCompany.under}
+         onClick={() =>  copy(setCompany.under)}>Under $100: {setCompany.under}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(selectCompany.over)}>Over $100: {selectCompany.over}
+         onClick={() =>  copy(setCompany.over)}>Over $100: {setCompany.over}
        </div>
     </>
   );
