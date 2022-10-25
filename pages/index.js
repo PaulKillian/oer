@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "../styles/Home.module.css";
 
-import { categories } from '../components/data.js'
+import { speedway, rpi, windy, luttys, ground, summit } from '../components/data.js'
 
 export default function Home() {
    const [selectCompany, setSelectCompany] = React.useState('');
