@@ -29,7 +29,15 @@ export default function Home() {
    navigator.clipboard.writeText(toCopy)
   };
    
- console.log(selectCompany.upsNumber)
+ const upsNumber = () => {
+   if (selectCompany.dropShip !== undefined) {
+     <div id={styles.pointer}
+      onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
+     </div>
+   } else {
+     return 
+   }
+ }
   
 
   return (
@@ -44,17 +52,10 @@ export default function Home() {
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
     </div>
+    {upsNumber()}
     <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
+      onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
     </div>
-    {if (selectCompany.dropShip !== undefined) {
-      <div id={styles.pointer}
-        onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
-      </div>
-    } else {
-       return
-      }
-    }
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
     </div>
