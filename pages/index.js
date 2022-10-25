@@ -61,7 +61,11 @@ export default function Home() {
 //       onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
 //     </div>
     <div>
-      {renderCategoies()}  
+      {categories.map((category) => {
+         <div id={styles.pointer}
+           onClick={() =>  copy(selectCompany.category)}>Cust#: {selectCompany.category}
+         </div>
+      })} 
     </div>
     
 //     <div id={styles.pointer}
