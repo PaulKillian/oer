@@ -21,6 +21,9 @@ export default function Home() {
       case 'LUTTY':
         setSelectCompany(luttys)
         break;
+      case 'GROUND':
+        setSelectCompany(groundUp)
+        break;
       default: ''
     }
   }
@@ -47,10 +50,11 @@ export default function Home() {
     <>
     <select onChange={handleChange}>
       <option>Company</option>
-      <option>SPEEDWAY</option>
-      <option>RPI</option>
-      <option>WINDY</option>
+      <option>GROUND</option>
       <option>LUTTY</option>
+      <option>RPI</option>
+      <option>SPEEDWAY</option>
+      <option>WINDY</option>
     </select>
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
