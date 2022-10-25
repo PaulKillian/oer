@@ -22,7 +22,7 @@ export default function Home() {
         setSelectCompany(luttys)
         break;
       case 'GROUND':
-        setSelectCompany(groundUp)
+        setSelectCompany(ground)
         break;
       default: ''
     }
