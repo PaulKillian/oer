@@ -30,11 +30,11 @@ export default function Home() {
   }
   
   const upsNumber = () => {
-   if (setCompany.upsNumber) {
-      console.log(setCompany.upsNumber)
+   if (company.upsNumber) {
+      console.log(company.upsNumber)
      return (
      <div id={styles.pointer}
-       onClick={() =>  copy(setCompany.upsNumber)}>Ups#: {setCompany.upsNumber}
+       onClick={() =>  copy(company.upsNumber)}>Ups#: {company.upsNumber}
      </div>
     )
    } else {
@@ -58,26 +58,26 @@ export default function Home() {
          <option>WINDY</option>
        </select>
        <div id={styles.pointer}
-         onClick={() =>  copy(setCompany.custNumber)}>Cust#: {setCompany.custNumber}
+         onClick={() =>  copy(company.custNumber)}>Cust#: {company.custNumber}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(setCompany.dropShip)}>{setCompany.dropShip}
+         onClick={() =>  copy(company.dropShip)}>{company.dropShip}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(setCompany.po)}>{setCompany.po}
+         onClick={() =>  copy(company.po)}>{company.po}
        </div>
        {upsNumber()}
         <div id={styles.pointer}
-         onClick={() =>  copy(setCompany.ground)}>{setCompany.ground}
+         onClick={() =>  copy(company.ground)}>{company.ground}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(setCompany.truck)}>{setCompany.truck}
+         onClick={() =>  copy(company.truck)}>{company.truck}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(setCompany.under)}>Under $100: {setCompany.under}
+         onClick={() =>  copy(company.under)}>Under $100: {company.under}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(setCompany.over)}>Over $100: {setCompany.over}
+         onClick={() =>  copy(company.over)}>Over $100: {company.over}
        </div>
     </>
   );
