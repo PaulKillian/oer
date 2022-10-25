@@ -1,5 +1,4 @@
 export const speedway = {
-    company: 'SPEEDWAY MOTORS',
     custNumber: '8238355',
     upsNumber: '635358',
     dropShip: 'DROPSHIP3',
@@ -9,7 +8,6 @@ export const speedway = {
   }
 
 export const rpi = {
-    company: 'RPI DESIGNS',
     custNumber: '8743326',
     upsNumber: 'Y8Y794',
     dropShip: 'DROPSHIP1',
@@ -17,7 +15,6 @@ export const rpi = {
   }
   
 export const windy = {
-    company: 'WINDY CITY MUSCLE CARS',
     custNumber: '8449560',
     po: 'PO#',
     under: 'DROPSHIP2',
@@ -25,7 +22,6 @@ export const windy = {
   }
 
 export const luttys = {
-    company: 'LUTTYS CHEVY',
     custNumber: '324040',
     upsNumber: '189743 only use if Requested by cust',
     po: 'PO#'
