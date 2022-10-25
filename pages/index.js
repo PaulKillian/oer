@@ -1,11 +1,10 @@
 import * as React from "react";
 import styles from "../styles/Home.module.css";
 
-import { speedway, rpi, windy, luttys, ground, summit } from '../components/data.js'
+import { categories } from '../components/data.js'
 
 export default function Home() {
    const [selectCompany, setSelectCompany] = React.useState('');
-   const categories = ['custNumber', 'upsNumber', 'dropShip', 'po', 'truck', 'under', 'over']
   
   
   const handleChange = (e) => {
@@ -50,8 +49,8 @@ export default function Home() {
     </select>
     <div>
       {categories.map((category) => (
-         <div id={styles.pointer} onClick={() =>  copy(selectCompany.category)}>
-           Cust#: {selectCompany.category}
+         <div id={styles.pointer} onClick={() =>  copy(categories.custNumber)}>
+           Cust#: {categories.custNumber}
          </div>
       ))} 
     </div>
