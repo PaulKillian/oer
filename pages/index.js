@@ -31,8 +31,9 @@ export default function Home() {
    
  const upsNumber = () => {
    if (selectCompany.upsNumber) {
+     return
      <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
+       onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
      </div>
    } else {
      return 'N/A'
