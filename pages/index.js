@@ -42,9 +42,11 @@ export default function Home() {
     <div id={styles.pointer}
       onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
     </div>
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
-    </div>
+    {selectCompany.upsNumber !== undefined &&
+       <div id={styles.pointer}
+         onClick={() =>  copy(selectCompany.upsNumber)}>Ups#: {selectCompany.upsNumber}
+       </div>
+{
     {selectCompany.dropShip !== undefined &&
       <div id={styles.pointer}
         onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
