@@ -36,15 +36,6 @@ export default function Home() {
  const copy = (toCopy) => {
    navigator.clipboard.writeText(toCopy)
   };
-   
- const renderCategories = () => {
-   categories.map((category) => {
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.category)}>Cust#: {selectCompany.category}
-    </div>
-   })
- };
-  
 
   return (
     <>
@@ -57,35 +48,13 @@ export default function Home() {
       <option>SUMMIT</option>
       <option>WINDY</option>
     </select>
-//     <div id={styles.pointer}
-//       onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
-//     </div>
     <div>
       {categories.map((category) => (
-         <div id={styles.pointer}
-           onClick={() =>  copy(selectCompany.category)}>Cust#: {selectCompany.category}
+         <div id={styles.pointer} onClick={() =>  copy(selectCompany.category)}>
+           Cust#: {selectCompany.category}
          </div>
       ))} 
     </div>
-    
-//     <div id={styles.pointer}
-//       onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
-//     </div>
-//     <div id={styles.pointer}
-//       onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
-//     </div>
-//      <div id={styles.pointer}
-//       onClick={() =>  copy(selectCompany.ground)}>{selectCompany.ground}
-//     </div>
-//     <div id={styles.pointer}
-//       onClick={() =>  copy(selectCompany.truck)}>{selectCompany.truck}
-//     </div>
-//     <div id={styles.pointer}
-//       onClick={() =>  copy(selectCompany.under)}>Under $100: {selectCompany.under}
-//     </div>
-//     <div id={styles.pointer}
-//       onClick={() =>  copy(selectCompany.over)}>Over $100: {selectCompany.over}
-//     </div>
     </>
   );
 }
