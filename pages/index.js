@@ -3,27 +3,27 @@ import styles from "../styles/Home.module.css";
 import { speedway, rpi, windy, luttys, ground, summit } from '../components/data.js'
 
 export default function Home() {
-  const [company, setCompany] = React.useState([]);
+  const [company, setCompany] = React.useState('');
   
   const handleChange = (e) => {
     switch(e.target.value) {
       case 'SPEEDWAY':
-        setCompany([speedway])
+        setCompany(speedway)
         break;
       case 'RPI':
-        setCompany([rpi])
+        setCompany(rpi)
         break;
       case 'WINDY':
-        setCompany([windy])
+        setCompany(windy)
         break;
       case 'LUTTY':
-        setCompany([luttys])
+        setCompany(luttys)
         break;
       case 'GROUND':
-        setCompany([ground])
+        setCompany(ground)
         break;
        case 'SUMMIT':
-        setCompany([summit])
+        setCompany(summit)
         break;
       default: ''
     }
