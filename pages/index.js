@@ -50,36 +50,37 @@ export default function Home() {
 
   return (
     <>
-    <select onChange={handleChange}>
-      <option>Company</option>
-      <option>GROUND</option>
-      <option>LUTTY</option>
-      <option>RPI</option>
-      <option>SPEEDWAY</option>
-      <option>SUMMIT</option>
-      <option>WINDY</option>
-    </select>
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
-    </div>
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
-    </div>
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
-    </div>
-    {upsNumber()}
-     <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.ground)}>{selectCompany.ground}
-    </div>
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.truck)}>{selectCompany.truck}
-    </div>
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.under)}>Under $100: {selectCompany.under}
-    </div>
-    <div id={styles.pointer}
-      onClick={() =>  copy(selectCompany.over)}>Over $100: {selectCompany.over}
-    </div>
+       <select onChange={handleChange}>
+         <option>Company</option>
+         <option>GROUND</option>
+         <option>LUTTY</option>
+         <option>RPI</option>
+         <option>SPEEDWAY</option>
+         <option>SUMMIT</option>
+         <option>WINDY</option>
+       </select>
+       <div id={styles.pointer}
+         onClick={() =>  copy(selectCompany.custNumber)}>Cust#: {selectCompany.custNumber}
+       </div>
+       <div id={styles.pointer}
+         onClick={() =>  copy(selectCompany.dropShip)}>{selectCompany.dropShip}
+       </div>
+       <div id={styles.pointer}
+         onClick={() =>  copy(selectCompany.po)}>{selectCompany.po}
+       </div>
+       {upsNumber()}
+        <div id={styles.pointer}
+         onClick={() =>  copy(selectCompany.ground)}>{selectCompany.ground}
+       </div>
+       <div id={styles.pointer}
+         onClick={() =>  copy(selectCompany.truck)}>{selectCompany.truck}
+       </div>
+       <div id={styles.pointer}
+         onClick={() =>  copy(selectCompany.under)}>Under $100: {selectCompany.under}
+       </div>
+       <div id={styles.pointer}
+         onClick={() =>  copy(selectCompany.over)}>Over $100: {selectCompany.over}
+       </div>
+    </>
   );
 }
