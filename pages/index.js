@@ -28,6 +28,8 @@ export default function Home() {
  const copy = (toCopy) => {
    navigator.clipboard.writeText(toCopy)
   };
+   
+ console.log(selectCompany.upsNumber)
   
 
   return (
