@@ -31,6 +31,7 @@ export const summit = {
     custNumber: '706183',
     dropShip: 'DROPSHIP3',
     upsNumber: '44958X',
+    truck: 'PO# , Ship Schneider Truck Freight. No Liftgate needed',
     po: 'PO#'
   }
   
