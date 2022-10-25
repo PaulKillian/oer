@@ -5,6 +5,7 @@ import { speedway, rpi, windy, luttys, ground, summit } from '../components/data
 
 export default function Home() {
    const [selectCompany, setSelectCompany] = React.useState('');
+   const category = ['custNumber', 'upsNumber']
   
   
   const handleChange = (e) => {
