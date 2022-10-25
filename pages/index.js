@@ -47,7 +47,8 @@ export default function Home() {
       <option>WINDY</option>
     </select>
     <ul>
-      {company.map((category, index) => (
+      {company.map((category, index) => 
+         <>
          <li
             key={index}
             className={styles.pointer}
@@ -78,6 +79,7 @@ export default function Home() {
             onClick={() =>  copy(category.custNumber)}>
             Cust#: {category.custNumber}
          </li>
+      </>
       ))} 
     </ul>
     </>
