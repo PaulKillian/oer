@@ -1,8 +1,8 @@
-#pointer {
+.pointer {
   cursor: pointer;
   padding: 5px;
 }
 
-#pointer:hover {
+.pointer:hover {
   color: skyblue
 }
