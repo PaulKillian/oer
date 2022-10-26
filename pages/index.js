@@ -58,7 +58,7 @@ export default function Home() {
    if(!toCopy) {
      navigator.clipboard.writeText(company.upsNumber)
      copyMore()
-   else {
+ } else {
      navigator.clipboard.writeText(toCopy)
     }
   };
