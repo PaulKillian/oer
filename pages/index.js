@@ -46,7 +46,13 @@ export default function Home() {
  }
   
  const copy = (toCopy) => {
-   navigator.clipboard.writeText(toCopy)
+   if(!toCopy {
+     navigator.clipboard.writeText(company.upsNumber)
+     navigator.clipboard.writeText(company.po)
+     navigator.clipboard.writeText(company.dropShip)
+   } else {
+     navigator.clipboard.writeText(toCopy)
+    }
   };
 
   return (
@@ -66,7 +72,7 @@ export default function Home() {
        </div>
        {upsNumber()}
        <div id={styles.pointer}
-         onClick={() =>  copy(company.po)}>{company.po}
+         onClick={() =>  copy()}>uPS,PO,Drop
        </div>
        <div id={styles.pointer}
          onClick={() =>  copy(company.dropShip)}>{company.dropShip}
