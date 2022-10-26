@@ -42,7 +42,7 @@ export const windy = {
     over: 'DROPSHIP1'
   }
 
-export const ground = {
+export const central = {
     custNumber: '7166903',
     dropShip: 'DROPSHIP1',
     upsNumber: 'X663X2',
