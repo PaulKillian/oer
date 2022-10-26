@@ -81,7 +81,7 @@ export default function Home() {
        </div>
        {upsNumber()}
        <div id={styles.pointer}
-         onClick={() =>  copy()}>uPS,PO,Drop
+         onClick={() =>  copy(company.dropShip)}>{company.po}
        </div>
        <div id={styles.pointer}
          onClick={() =>  copy(company.dropShip)}>{company.dropShip}
