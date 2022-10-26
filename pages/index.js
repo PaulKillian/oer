@@ -36,7 +36,7 @@ export default function Home() {
    if (company.upsNumber) {
       console.log(company.upsNumber)
      return (
-     <div id={styles.pointer}
+     <div id={'1'} className={styles.pointer}
        onClick={() =>  copy(company.upsNumber)}>Ups#: {company.upsNumber}
      </div>
     )
@@ -56,8 +56,9 @@ export default function Home() {
   
  const copy = (toCopy) => {
    if(!toCopy) {
-     navigator.clipboard.writeText(company.upsNumber)
-     copyMore()
+     document.getElementById("1").click();
+     document.getElementById("2").click();
+     document.getElementById("3").click();
  } else {
      navigator.clipboard.writeText(toCopy)
     }
@@ -76,26 +77,27 @@ export default function Home() {
          <option>SUMMIT</option>
          <option>WINDY</option>
        </select>
-       <div id={styles.pointer}
+       <div id={styles.pointer} className={styles.pointer}
          onClick={() =>  copy(company.custNumber)}>Cust#: {company.custNumber}
        </div>
+       <div onClick={() =>  copy()}>ups, po, drop</div>
        {upsNumber()}
-       <div id={styles.pointer}
-         onClick={() =>  copy(company.dropShip)}>{company.po}
+       <div id={'2'} className={styles.pointer}
+         onClick={() =>  copy(company.po)}>{company.po}
        </div>
-       <div id={styles.pointer}
+       <div id={'3'} className={styles.pointer}
          onClick={() =>  copy(company.dropShip)}>{company.dropShip}
        </div>
-       <div id={styles.pointer}
+       <div className={styles.pointer}
          onClick={() =>  copy(company.ground)}>{company.ground}
        </div>
-       <div id={styles.pointer}
+       <div className={styles.pointer}
          onClick={() =>  copy(company.truck)}>{company.truck}
        </div>
-       <div id={styles.pointer}
+       <div className={styles.pointer}
          onClick={() =>  copy(company.under)}>Under $100: {company.under}
        </div>
-       <div id={styles.pointer}
+       <div className={styles.pointer}
          onClick={() =>  copy(company.over)}>Over $100: {company.over}
        </div>
     </>
