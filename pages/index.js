@@ -46,7 +46,7 @@ export default function Home() {
  }
   
  const copy = (toCopy) => {
-   if(!toCopy {
+   if(!toCopy) {
      navigator.clipboard.writeText(company.upsNumber)
      navigator.clipboard.writeText(company.po)
      navigator.clipboard.writeText(company.dropShip)
