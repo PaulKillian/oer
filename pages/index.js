@@ -60,14 +60,14 @@ export default function Home() {
        <div id={styles.pointer}
          onClick={() =>  copy(company.custNumber)}>Cust#: {company.custNumber}
        </div>
+       {upsNumber()}
+       <div id={styles.pointer}
+         onClick={() =>  copy(company.po)}>{company.po}
+       </div>
        <div id={styles.pointer}
          onClick={() =>  copy(company.dropShip)}>{company.dropShip}
        </div>
        <div id={styles.pointer}
-         onClick={() =>  copy(company.po)}>{company.po}
-       </div>
-       {upsNumber()}
-        <div id={styles.pointer}
          onClick={() =>  copy(company.ground)}>{company.ground}
        </div>
        <div id={styles.pointer}
