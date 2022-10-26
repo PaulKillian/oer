@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "../styles/Home.module.css";
-import { speedway, rpi, windy, luttys, ground, summit } from '../components/data.js'
+import { speedway, rpi, windy, luttys, ground, summit, central } from '../components/data.js'
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
@@ -24,6 +24,9 @@ export default function Home() {
         break;
        case 'SUMMIT':
         setCompany(summit)
+        break;
+       case 'CENTRAL':
+        setCompany(central)
         break;
       default: ''
     }
@@ -50,6 +53,7 @@ export default function Home() {
     <>
        <select onChange={handleChange}>
          <option>Company</option>
+         <option>CENTRAL</option>
          <option>GROUND</option>
          <option>LUTTY</option>
          <option>RPI</option>
