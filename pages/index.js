@@ -44,16 +44,25 @@ export default function Home() {
      return 'N/A'
    }
  }
+ 
+ const copyMoreMore = () => {
+   navigator.clipboard.writeText(company.dropShip)
+ }
+ 
+ const copyMore = () => {
+   navigator.clipboard.writeText(company.po)
+   copyMoreMore()
+ }
   
  const copy = (toCopy) => {
    if(!toCopy) {
      navigator.clipboard.writeText(company.upsNumber)
-     navigator.clipboard.writeText(company.po)
-     navigator.clipboard.writeText(company.dropShip)
-   } else {
+     copyMore()
+   else {
      navigator.clipboard.writeText(toCopy)
     }
   };
+   
 
   return (
     <>
