@@ -40,7 +40,11 @@ export default function Home() {
      </div>
     )
    } else {
-     return 'N/A'
+     return (
+     <div id={hidden}
+       onClick={() =>  copy(company.upsNumber)}>Ups#: {company.upsNumber}
+     </div>
+    )
    }
  }
  
