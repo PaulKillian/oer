@@ -41,7 +41,7 @@ export default function Home() {
     )
    } else {
      return (
-     <div id={hidden}
+     <div id={styles.hidden}
        onClick={() =>  copy(company.upsNumber)}>Ups#: {company.upsNumber}
      </div>
     )
