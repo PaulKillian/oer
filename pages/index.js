@@ -105,7 +105,7 @@ export default function Home() {
           </div>
         } else {
           return
-          <div id={styles.pointer}
+          <div id={styles.hidden}
             onClick={() =>  copy(company.under)}>Ups#: {company.under}
           </div>
         }
