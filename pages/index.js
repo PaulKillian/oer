@@ -68,6 +68,7 @@ export default function Home() {
    navigator.clipboard.writeText(toCopy)
   };
    
+  console.log(conpany.under)
 
   return (
     <>
