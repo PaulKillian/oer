@@ -6,3 +6,7 @@
 #pointer:hover {
   color: skyblue
 }
+
+#hidden {
+  display: none;
+}
