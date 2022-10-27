@@ -1,6 +1,7 @@
 import * as React from "react";
 import styles from "../styles/Home.module.css";
 import { speedway, rpi, windy, luttys, ground, summit, central } from '../components/data.js'
+import useEffect from 'react'
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
