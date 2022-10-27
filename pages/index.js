@@ -4,7 +4,7 @@ import { speedway, rpi, windy, luttys, ground, summit, central } from '../compon
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
-  const = [click, setClick] = React.useState('');
+  const [click, setClick] = React.useState('');
   
   const handleChange = (e) => {
     switch(e.target.value) {
