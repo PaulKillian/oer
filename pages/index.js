@@ -66,25 +66,24 @@ export default function Home() {
  }
  
  const copy = (toCopy) => {
-   switch(click) {
-    case 'ups':
-      setClick('po')
-      navigator.clipboard.writeText(company.ups)
-      document.querySelector('click').click();
-      break;
-    case 'po':
-      setClick('drop')
-      navigator.clipboard.writeText(company.po)
-      document.querySelector('click').click();
-      break;
-    case 'drop':
-      navigator.clipboard.writeText(company.dropShip)
-      break;
-    default: navigator.clipboard.writeText(toCopy)
+//    switch(click) {
+//     case 'ups':
+//       setClick('po')
+//       navigator.clipboard.writeText(company.ups)
+//       document.querySelector('click').click();
+//       break;
+//     case 'po':
+//       setClick('drop')
+//       navigator.clipboard.writeText(company.po)
+//       document.querySelector('click').click();
+//       break;
+//     case 'drop':
+//       navigator.clipboard.writeText(company.dropShip)
+//       break;
+//     default: 
+   navigator.clipboard.writeText(toCopy)
    }
   };
-   
-  console.log(company.under)
 
   return (
     <>
