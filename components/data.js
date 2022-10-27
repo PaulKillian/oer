@@ -48,3 +48,10 @@ export const central = {
     po: 'PO#'
   }
 
+export const parts = {
+    custNumber: '358564',
+    dropShip: 'DROPSHIP1',
+    upsNumber: 'A83V25',
+    po: 'PO#'
+  }
+
