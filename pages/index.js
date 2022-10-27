@@ -29,6 +29,9 @@ export default function Home() {
        case 'CENTRAL':
         setCompany(central)
         break;
+       case 'PARTSPL':
+        setCompany(parts)
+        break;
       default: ''
     }
   }
@@ -76,6 +79,7 @@ export default function Home() {
          <option>CENTRAL</option>
          <option>GROUND</option>
          <option>LUTTY</option>
+         <option>PARTSPL</option>
          <option>RPI</option>
          <option>SPEEDWAY</option>
          <option>SUMMIT</option>
