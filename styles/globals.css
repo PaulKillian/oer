@@ -27,11 +27,3 @@ a {
   }
 }
 
-div {
-  cursor: pointer;
-  padding: 5px;
-}
-
-div:hover {
-  color: skyblue
-}
