@@ -68,7 +68,7 @@ export default function Home() {
    navigator.clipboard.writeText(toCopy)
   };
    
-  console.log(conpany.under)
+  console.log(company.under)
 
   return (
     <>
@@ -95,19 +95,21 @@ export default function Home() {
        <div id={styles.pointer} 
          onClick={() =>  copy(company.truck)}>{company.truck}
        </div>
-       {(() => {
-        if (company.under) {
-          return
-          <div id={styles.pointer}
-            onClick={() =>  copy(company.under)}>Ups#: {company.under}
-          </div>
-        } else {
-          return
-          <div id={styles.hidden}
-            onClick={() =>  copy(company.under)}>Ups#: {company.under}
-          </div>
-        }
-       })()}
+       <div>
+         {(() => {
+          if (company.under) {
+            return
+            <div id={styles.pointer}
+              onClick={() =>  copy(company.under)}>Ups#: {company.under}
+            </div>
+          } else {
+            return
+            <div id={styles.hidden}
+              onClick={() =>  copy(company.under)}>Ups#: {company.under}
+            </div>
+          }
+         })()}
+        </div>
        <div id={styles.pointer} 
          onClick={() =>  copy(company.over)}>Over $100: {company.over}
        </div>
