@@ -21,10 +21,9 @@ export const rpi = {
 export const speedway = {
     custNumber: '8238355',
     upsNumber: '635358',
-    dropShip: 'DROPSHIP3',
-    ground: 'PO# , SHIP UNINSURED, GROUND, PUT PO# IN UPS REFBOX#1', 
+    dropShip: 'DROPSHIP3', 
     truck: 'PO# , SHIPS TRUCK FRIEGHT',
-    po: 'PO#'
+    po: 'PO# , SHIP UNINSURED, GROUND, PUT PO# IN UPS REFBOX#1'
   }
 
 export const summit = {
