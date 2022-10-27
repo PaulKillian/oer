@@ -4,6 +4,7 @@ import { speedway, rpi, windy, luttys, ground, summit, central } from '../compon
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
+  const = [click, setClick] = React.useState('');
   
   const handleChange = (e) => {
     switch(e.target.value) {
@@ -65,7 +66,23 @@ export default function Home() {
  }
  
  const copy = (toCopy) => {
-   navigator.clipboard.writeText(toCopy)
+   switch(click) {
+    case 'ups':
+      setClick('ups')
+      document.querySelector('click').click();
+       navigator.clipboard.writeText(company.ups)
+      break;
+    case 'ups':
+      setClick('po')
+      document.querySelector('click').click();
+       navigator.clipboard.writeText(company.po)
+      break;
+    case 'po':
+      navigator.clipboard.writeText(company.dropShip)
+      break;
+    default: navigator.clipboard.writeText(toCopy)
+   }
+   
   };
    
   console.log(company.under)
@@ -86,6 +103,9 @@ export default function Home() {
          onClick={() =>  copy(company.custNumber)}>Cust#: {company.custNumber}
        </div>
        {upsNumber()}
+       <div id={styles.pointer} className={'click'}
+         onClick={() =>  copy('ups')}>ups-po-drop
+       </div>
        <div id={styles.pointer} 
          onClick={() =>  copy(company.po)}>{company.po}
        </div>
