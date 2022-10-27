@@ -85,9 +85,9 @@ export default function Home() {
          onClick={() =>  copy(company.custNumber)}>Cust#: {company.custNumber}
        </div>
        {upsNumber()}
-       <div id={styles.pointer} className={'click'}
-         onClick={() =>  copy()}>ups-po-drop
-       </div>
+//        <div id={styles.pointer} className={'click'}
+//          onClick={() =>  copy()}>ups-po-drop
+//        </div>
        <div id={styles.pointer} 
          onClick={() =>  copy(company.po)}>{company.po}
        </div>
