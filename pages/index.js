@@ -79,7 +79,11 @@ export default function Home() {
  };
 
   return (
-    <div className='flex'>
+    <div>
+    <Image 
+      src={img}
+      alt="log"
+    />
       <div>
        <select onChange={handleChange}>
          <option>Company</option>
@@ -112,10 +116,6 @@ export default function Home() {
          onClick={() =>  copy(company.over)}>Over $100: {company.over}
        </div>
       </div>
-    <Image 
-      src={img}
-      alt="log"
-    />
     </div>
   );
 }
