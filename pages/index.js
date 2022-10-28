@@ -4,11 +4,12 @@ import { speedway, rpi, windy, luttys, ground, summit, central } from '../compon
 import useEffect from 'react'
 import Image from 'next/image'
 import oer from '../public/oer-slideshow-5.jpg'
+import summitImg from '../public/Summit Racing.png'
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
   const [click, setClick] = React.useState('ups');
-  const [colors, setColors] = React.useState('');
+  const [img, setImg] = React.useState('');
   
   (function () {
     var letters = '0123456789ABCDEF';
@@ -40,6 +41,7 @@ export default function Home() {
         break;
        case 'SUMMIT':
         setCompany(summit)
+        setImg(summitImg)
         break;
        case 'CENTRAL':
         setCompany(central)
@@ -122,8 +124,8 @@ export default function Home() {
        </div>
       </div>
     <Image 
-      src={oer}
-      alt="oer pic"
+      src={img}
+      alt="log"
     />
     </div>
   );
