@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(54,9,121,0.8295693277310925) 35%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(54,9,121,0.8295693277310925) 35%, rgba(0,212,255,0.41220238095238093) 100%);
 }
 
 a {
