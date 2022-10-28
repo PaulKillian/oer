@@ -88,7 +88,9 @@ export default function Home() {
 
   return (
       <div>
-        <Image id={'img'}
+        <Image 
+          width={50} 
+          height={50}
           src={img}
           alt="log"
         />
