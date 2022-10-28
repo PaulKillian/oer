@@ -2,6 +2,8 @@ import * as React from "react";
 import styles from "../styles/Home.module.css";
 import { speedway, rpi, windy, luttys, ground, summit, central } from '../components/data.js'
 import useEffect from 'react'
+import Image from 'next/image'
+import oer from '../public/oer-slideshow-5.jpg
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
@@ -86,7 +88,8 @@ export default function Home() {
  };
 
   return (
-    <>
+    <div className='flex'>
+      <div>
        <select onChange={handleChange}>
          <option>Company</option>
          <option>CENTRAL</option>
@@ -117,6 +120,11 @@ export default function Home() {
        <div id={styles.pointer} 
          onClick={() =>  copy(company.over)}>Over $100: {company.over}
        </div>
-    </>
+      </div>
+    <Image 
+      src={oer}
+      alt="oer pic"
+    />
+    </div>
   );
 }
