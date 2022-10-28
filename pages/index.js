@@ -79,13 +79,11 @@ export default function Home() {
  };
 
   return (
-//     <div>
-//       <Image 
-//         src={img}
-//         alt="log"
-//       />
-//     </div>
       <div>
+        <Image 
+          src={img}
+          alt="log"
+        />
        <select onChange={handleChange}>
          <option>Company</option>
          <option>CENTRAL</option>
