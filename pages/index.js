@@ -6,18 +6,19 @@ import useEffect from 'react'
 export default function Home() {
   const [company, setCompany] = React.useState('');
   const [click, setClick] = React.useState('ups');
+  const [colors, setColors] = React.useState('');
   
   useEffect(() => {
-    const setBg = () => {
-      const randomColor = Math.floor(Math.random()*16777215).toString(16);
-      document.getElementById('pointer').style.backgroundColor = "#" + randomColor;
-      color.innerHTML = "#" + randomColor;
-    }
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+    return color;
+    setColors(color)
   })
   
-
-  genNew.addEventListener("click", setBg);
-  setBg();
+  consol.log(colors)
   
   const handleChange = (e) => {
     switch(e.target.value) {
