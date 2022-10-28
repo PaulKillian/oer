@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import { speedway, rpi, windy, luttys, ground, summit, central } from '../components/data.js'
 import useEffect from 'react'
 import Image from 'next/image'
-import oer from '../public/oer-slideshow-5.jpg
+import oer from '../public/oer-slideshow-5.jpg'
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
