@@ -18,7 +18,7 @@ export default function Home() {
     setColors(color)
   }, [])
   
-  consol.log(colors)
+  console.log(colors)
   
   const handleChange = (e) => {
     switch(e.target.value) {
