@@ -12,5 +12,7 @@
 }
 
 #img {
- margin: 5px; 
+ margin: 5px;
+ height: auto;
+ width: 10%;
 }
