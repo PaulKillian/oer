@@ -7,6 +7,18 @@ export default function Home() {
   const [company, setCompany] = React.useState('');
   const [click, setClick] = React.useState('ups');
   
+  useEffect(() => {
+    const setBg = () => {
+      const randomColor = Math.floor(Math.random()*16777215).toString(16);
+      document.getElementById('pointer').style.backgroundColor = "#" + randomColor;
+      color.innerHTML = "#" + randomColor;
+    }
+  })
+  
+
+  genNew.addEventListener("click", setBg);
+  setBg();
+  
   const handleChange = (e) => {
     switch(e.target.value) {
       case 'SPEEDWAY':
