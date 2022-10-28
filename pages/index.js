@@ -8,15 +8,15 @@ export default function Home() {
   const [click, setClick] = React.useState('ups');
   const [colors, setColors] = React.useState('');
   
-  useEffect(() => {
+  (function () {
     var letters = '0123456789ABCDEF';
-    var color = '#';
+      var color = '#';
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
       }
-    return color;
+      return color;
     setColors(color)
-  }, [])
+  })
   
   console.log(colors)
   
