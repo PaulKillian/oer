@@ -11,17 +11,6 @@ export default function Home() {
   const [click, setClick] = React.useState('ups');
   const [img, setImg] = React.useState('');
   
-  (function () {
-    var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-    setColors(color)
-  })
-  
-  console.log(colors)
-  
   const handleChange = (e) => {
     switch(e.target.value) {
       case 'SPEEDWAY':
