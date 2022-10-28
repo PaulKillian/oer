@@ -13,6 +13,7 @@ import useEffect from 'react'
 import Image from 'next/image'
 import oer from '../public/oer-slideshow-5.jpg'
 import summitImg from '../public/Summit Racing.png'
+import speedwayImg from '../public/Speedway_Motors_Logo_300.png'
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
@@ -23,6 +24,7 @@ export default function Home() {
     switch(e.target.value) {
       case 'SPEEDWAY':
         setCompany(speedway)
+        setImg(speedwayImg)
         break;
       case 'RPI':
         setCompany(rpi)
