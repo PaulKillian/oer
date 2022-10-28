@@ -79,7 +79,6 @@ export default function Home() {
  };
 
   return (
-    <div>
 //     <div>
 //       <Image 
 //         src={img}
@@ -117,7 +116,6 @@ export default function Home() {
        <div id={styles.pointer} 
          onClick={() =>  copy(company.over)}>Over $100: {company.over}
        </div>
-      </div>
     </div>
   );
 }
