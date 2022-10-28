@@ -89,8 +89,9 @@ export default function Home() {
   return (
       <div>
         <Image 
-          width={50} 
-          height={50}
+          width={130} 
+          height={100}
+          quality={100}
           src={img}
           alt="log"
         />
