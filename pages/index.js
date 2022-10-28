@@ -16,7 +16,7 @@ export default function Home() {
       }
     return color;
     setColors(color)
-  })
+  }, [])
   
   consol.log(colors)
   
