@@ -80,7 +80,7 @@ export default function Home() {
 
   return (
       <div>
-        <Image 
+        <Image id={'img'}
           src={img}
           alt="log"
         />
