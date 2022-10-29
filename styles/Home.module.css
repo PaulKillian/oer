@@ -1,6 +1,8 @@
 #pointer {
   cursor: pointer;
   padding: 5px;
+  color: white;
+  font-size: xxx-large;
 }
 
 #pointer:hover {

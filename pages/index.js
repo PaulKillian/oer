@@ -7,18 +7,25 @@ import {
   luttys, 
   ground, 
   summit, 
-  central 
+  central,
+  parts 
 } from '../components/data.js'
 import useEffect from 'react'
 import Image from 'next/image'
-import oer from '../public/oer-slideshow-5.jpg'
+import oer from '../public/oer.png'
 import summitImg from '../public/Summit Racing.png'
 import speedwayImg from '../public/Speedway_Motors_Logo_300.png'
+import luttysImg from '../public/luttys.png'
+import partsplImg from '../public/partspl.png'
+import rpiImg from '../public/rpi.jpeg'
+import groundupImg from '../public/SS396_Main_Logo.png'
+import comarocentralImg from '../public/camarocentral.gif'
+import windyImg from '../public/windy.webp'
 
 export default function Home() {
   const [company, setCompany] = React.useState('');
   const [click, setClick] = React.useState('ups');
-  const [img, setImg] = React.useState('');
+  const [img, setImg] = React.useState(oer);
   
   const handleChange = (e) => {
     switch(e.target.value) {
@@ -28,15 +35,20 @@ export default function Home() {
         break;
       case 'RPI':
         setCompany(rpi)
+        setImg(rpiImg)
         break;
       case 'WINDY':
         setCompany(windy)
+        setImg(windyImg)
         break;
-      case 'LUTTY':
+      case 'LUTTYS':
         setCompany(luttys)
+        console.log(luttysImg)
+        setImg(luttysImg)
         break;
       case 'GROUND':
         setCompany(ground)
+        setImg(groundupImg)
         break;
        case 'SUMMIT':
         setCompany(summit)
@@ -44,9 +56,11 @@ export default function Home() {
         break;
        case 'CENTRAL':
         setCompany(central)
+        setImg(comarocentralImg)
         break;
        case 'PARTSPL':
         setCompany(parts)
+        setImg(partsplImg)
         break;
       default: ''
     }
@@ -91,17 +105,18 @@ export default function Home() {
   return (
       <div>
         <Image 
-          width={130} 
-          height={100}
+          width={230} 
+          height={200}
           quality={100}
           src={img}
-          alt="log"
+          alt="logo"
+          objectFit='contain'
         />
        <select onChange={handleChange}>
          <option>Company</option>
          <option>CENTRAL</option>
          <option>GROUND</option>
-         <option>LUTTY</option>
+         <option>LUTTYS</option>
          <option>PARTSPL</option>
          <option>RPI</option>
          <option>SPEEDWAY</option>
