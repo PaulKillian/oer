@@ -86,17 +86,33 @@ export default function Home() {
    if (company.under) {
      return (
      <div id={styles.pointer}
-       onClick={() =>  copy(company.under)}>Ups#: {company.under}
+       onClick={() =>  copy(company.under)}>Under $100: {company.under}
      </div>
     )
    } else {
      return (
      <div id={styles.hidden}
-       onClick={() =>  copy(company.under)}>Ups#: {company.under}
+       onClick={() =>  copy(company.under)}>Under $100: {company.under}
      </div>
     )
    }
  }
+
+ const over = () => {
+  if (company.over) {
+    return (
+    <div id={styles.pointer}
+      onClick={() =>  copy(company.over)}>Over $100: {company.over}
+    </div>
+   )
+  } else {
+    return (
+    <div id={styles.hidden}
+      onClick={() =>  copy(company.over)}>Over $100: {company.over}
+    </div>
+   )
+  }
+}
  
  const copy = (toCopy) => {
    navigator.clipboard.writeText(toCopy)
@@ -136,12 +152,8 @@ export default function Home() {
        <div id={styles.pointer} 
          onClick={() =>  copy(company.truck)}>{company.truck}
        </div>
-       <div id={styles.pointer}
-         onClick={() =>  copy(company.under)}>Under $100: {company.under}
-       </div>
-       <div id={styles.pointer} 
-         onClick={() =>  copy(company.over)}>Over $100: {company.over}
-       </div>
+       {over()}
+       {under()}
     </div>
   );
 }
