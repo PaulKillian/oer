@@ -1,4 +1,5 @@
 import * as React from "react";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from "../styles/Home.module.css";
 import { 
   speedway, 
@@ -119,26 +120,30 @@ export default function Home() {
  };
 
   return (
-      <div>
-        <Image 
-          width={230} 
-          height={200}
-          quality={100}
-          src={img}
-          alt="logo"
-          objectFit='contain'
-        />
-       <select onChange={handleChange}>
-         <option>Company</option>
-         <option>CENTRAL</option>
-         <option>GROUND</option>
-         <option>LUTTYS</option>
-         <option>PARTSPL</option>
-         <option>RPI</option>
-         <option>SPEEDWAY</option>
-         <option>SUMMIT</option>
-         <option>WINDY</option>
-       </select>
+      <div className="p-3">
+        <div className="d-flex align-items-center">
+          <div>
+            <Image 
+              width={230} 
+              height={200}
+              quality={100}
+              src={img}
+              alt="logo"
+              objectFit='contain'
+            />
+          </div>
+          <select onChange={handleChange}>
+            <option>Company</option>
+            <option>CENTRAL</option>
+            <option>GROUND</option>
+            <option>LUTTYS</option>
+            <option>PARTSPL</option>
+            <option>RPI</option>
+            <option>SPEEDWAY</option>
+            <option>SUMMIT</option>
+            <option>WINDY</option>
+          </select>
+        </div>      
        <div id={styles.pointer} 
          onClick={() =>  copy(company.custNumber)}>Cust#: {company.custNumber}
        </div>
