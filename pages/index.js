@@ -1,5 +1,5 @@
 import * as React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css'
 import Dropdown from 'react-bootstrap/Dropdown';
 import styles from "../styles/Home.module.css";
 import { 
@@ -122,19 +122,31 @@ export default function Home() {
             </Dropdown>
           </div>  
         </div>  
-       <div id={styles.pointer} 
-         onClick={() =>  copy(dealers.custNumber)}>Cust#: {dealers.custNumber}
+       <div className='d-flex align-items-center'>
+        <div id='custNum' className={styles.pointer}
+          onClick={() =>  copy(event, dealers.custNumber)}>Cust#: {dealers.custNumber}
+        </div>
        </div>
-       {truck(dealers)}
-       {underOver(dealers)}
-       {upsNum(dealers)}
-       <div id={styles.pointer} 
-         onClick={() =>  copy(dealers.po)}>{dealers.po}
+       
+       <div className='d-flex align-items-center'>
+        {truck(dealers)}
        </div>
-       <div id={styles.pointer} 
-         onClick={() =>  copy(dealers.dropShip)}>{dealers.dropShip}
+       <div className='d-flex align-items-center'>
+        {underOver(dealers)}
        </div>
-       <div>{copied}</div>
+       <div className='d-flex align-items-center'>
+        {upsNum(dealers)}
+       </div>
+       <div className='d-flex align-items-center'>
+        <div id='po' className={styles.pointer}
+          onClick={() =>  copy(event, dealers.po)}>{dealers.po}
+        </div>
+       </div>
+       <div className='d-flex align-items-center'>
+        <div id='dropShip' className={styles.pointer}
+          onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
+        </div>
+       </div>
     </div>
   );
 }

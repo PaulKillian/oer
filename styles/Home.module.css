@@ -1,11 +1,11 @@
-#pointer {
+.pointer {
   font-family: 'Oswald', sans-serif;
   cursor: pointer;
   padding: 5px;
   font-size: xxx-large;
 }
 
-#pointer:hover {
+.pointer:hover {
   color: #085ED6
 }
 
@@ -40,4 +40,8 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.fitContent {
+  height: fit-content;
 }
