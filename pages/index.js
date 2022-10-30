@@ -39,9 +39,20 @@ export default function Home() {
   }
   const [dealers, setDealers] = React.useState({})
   const [img, setImg] = React.useState(oer);
+  const [copied, setCopied] = React.useState('');
+  const [clicked, setClicked] = React.useState(false);
 
+  const click = () => {
+    if (clicked) {
+      setClicked(false)
+    } else {
+      setClicked(true);
+    }
+  }
   
   const handleSelect = (e) => {
+    setClicked(false);
+
     const dealer = e.toLowerCase();
     for (const key in company) {
       if (key === dealer) {
@@ -52,8 +63,10 @@ export default function Home() {
     }
   }
 
+  console.log(clicked)
+
   return (
-      <div className={styles.background}>
+      <div className={`${clicked ? styles.background : styles.noBackground}`}>
         <div className="d-flex align-items-center">
           <div>
             <Image 
@@ -65,9 +78,9 @@ export default function Home() {
               objectFit='contain'
             />
           </div>
-          <div className={styles.font} style={{ display: 'block', 
-                  width: 700, 
-                  padding: 30 }}>
+          <div className={styles.font} 
+            style={{ display: 'block', width: 700, padding: 30 }}
+            onClick={click}>
             <Dropdown onSelect={handleSelect}>
               <Dropdown.Toggle className={styles.font}>
                 DEALER
@@ -108,7 +121,7 @@ export default function Home() {
               </Dropdown.Menu>
             </Dropdown>
           </div>  
-        </div>      
+        </div>  
        <div id={styles.pointer} 
          onClick={() =>  copy(dealers.custNumber)}>Cust#: {dealers.custNumber}
        </div>
@@ -121,7 +134,7 @@ export default function Home() {
        <div id={styles.pointer} 
          onClick={() =>  copy(dealers.dropShip)}>{dealers.dropShip}
        </div>
-       
+       <div>{copied}</div>
     </div>
   );
 }

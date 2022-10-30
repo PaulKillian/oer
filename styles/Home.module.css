@@ -22,15 +22,24 @@
 .font {
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
+  z-index: 1;
 }
 
 .itemBg {
   background-color: #ffffff;
   margin-top: 5px;
-
 }
 
 .itemBg:hover {
   background-color: #237fff;
   color: #ffffff;
+}
+
+.background {
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
