@@ -79,7 +79,7 @@ export default function Home() {
             />
           </div>
           <div className={styles.font} 
-            style={{ display: 'block', width: 700, padding: 30 }}
+            style={{ paddingLeft: 5 }}
             onClick={click}>
             <Dropdown onSelect={handleSelect}>
               <Dropdown.Toggle className={styles.font}>
