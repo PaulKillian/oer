@@ -1,12 +1,12 @@
 #pointer {
+  font-family: 'Oswald', sans-serif;
   cursor: pointer;
   padding: 5px;
-  color: white;
   font-size: xxx-large;
 }
 
 #pointer:hover {
-  color: #E9DE00
+  color: #085ED6
 }
 
 #hidden {
@@ -17,4 +17,20 @@
  margin: 5px;
  height: auto;
  width: 10%;
+}
+
+.font {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+}
+
+.itemBg {
+  background-color: #ffffff;
+  margin-top: 5px;
+
+}
+
+.itemBg:hover {
+  background-color: #237fff;
+  color: #ffffff;
 }

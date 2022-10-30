@@ -1,5 +1,6 @@
 import * as React from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Dropdown from 'react-bootstrap/Dropdown';
 import styles from "../styles/Home.module.css";
 import { 
   speedway, 
@@ -9,7 +10,7 @@ import {
   ground, 
   summit, 
   central,
-  parts 
+  partspl 
 } from '../components/data.js'
 import useEffect from 'react'
 import Image from 'next/image'
@@ -20,107 +21,39 @@ import luttysImg from '../public/luttys.png'
 import partsplImg from '../public/partspl.png'
 import rpiImg from '../public/rpi.jpeg'
 import groundupImg from '../public/SS396_Main_Logo.png'
-import comarocentralImg from '../public/camarocentral.gif'
+import camarocentralImg from '../public/camarocentral.gif'
 import windyImg from '../public/windy.webp'
+import {truck, underOver, upsNum} from '../components/conditionalRenders.js'
+import { copy } from "../components/copy.js";
 
 export default function Home() {
-  const [company, setCompany] = React.useState('');
-  const [click, setClick] = React.useState('ups');
+  const company = {
+    'speedway': { categories: speedway, image: speedwayImg },
+    'rpi': { categories: rpi, image: rpiImg },
+    'windy': { categories: windy, image: windyImg }, 
+    'luttys': { categories: luttys, image: luttysImg },
+    'ground': { categories: ground, image: groundupImg },
+    'summit': { categories: summit, image: summitImg },
+    'central': { categories: central, image: camarocentralImg },
+    'partspl': { categories: partspl, image: partsplImg }
+  }
+  const [dealers, setDealers] = React.useState({})
   const [img, setImg] = React.useState(oer);
+
   
-  const handleChange = (e) => {
-    switch(e.target.value) {
-      case 'SPEEDWAY':
-        setCompany(speedway)
-        setImg(speedwayImg)
-        break;
-      case 'RPI':
-        setCompany(rpi)
-        setImg(rpiImg)
-        break;
-      case 'WINDY':
-        setCompany(windy)
-        setImg(windyImg)
-        break;
-      case 'LUTTYS':
-        setCompany(luttys)
-        console.log(luttysImg)
-        setImg(luttysImg)
-        break;
-      case 'GROUND':
-        setCompany(ground)
-        setImg(groundupImg)
-        break;
-       case 'SUMMIT':
-        setCompany(summit)
-        setImg(summitImg)
-        break;
-       case 'CENTRAL':
-        setCompany(central)
-        setImg(comarocentralImg)
-        break;
-       case 'PARTSPL':
-        setCompany(parts)
-        setImg(partsplImg)
-        break;
-      default: ''
+  const handleSelect = (e) => {
+    const dealer = e.toLowerCase();
+    for (const key in company) {
+      if (key === dealer) {
+        setDealers(company[key].categories)  
+        setImg(company[key].image) 
+        return
+      }
     }
   }
-  
-  const upsNumber = () => {
-   if (company.upsNumber) {
-     return (
-     <div id={styles.pointer}
-       onClick={() =>  copy(company.upsNumber)}>Ups#: {company.upsNumber}
-     </div>
-    )
-   } else {
-     return (
-     <div id={styles.hidden}
-       onClick={() =>  copy(company.upsNumber)}>Ups#: {company.upsNumber}
-     </div>
-    )
-   }
- }
- 
-  const under = () => {
-   if (company.under) {
-     return (
-     <div id={styles.pointer}
-       onClick={() =>  copy(company.under)}>Under $100: {company.under}
-     </div>
-    )
-   } else {
-     return (
-     <div id={styles.hidden}
-       onClick={() =>  copy(company.under)}>Under $100: {company.under}
-     </div>
-    )
-   }
- }
-
- const over = () => {
-  if (company.over) {
-    return (
-    <div id={styles.pointer}
-      onClick={() =>  copy(company.over)}>Over $100: {company.over}
-    </div>
-   )
-  } else {
-    return (
-    <div id={styles.hidden}
-      onClick={() =>  copy(company.over)}>Over $100: {company.over}
-    </div>
-   )
-  }
-}
- 
- const copy = (toCopy) => {
-   navigator.clipboard.writeText(toCopy)
- };
 
   return (
-      <div className="p-3">
+      <div className={styles.background}>
         <div className="d-flex align-items-center">
           <div>
             <Image 
@@ -132,33 +65,63 @@ export default function Home() {
               objectFit='contain'
             />
           </div>
-          <select onChange={handleChange}>
-            <option>Company</option>
-            <option>CENTRAL</option>
-            <option>GROUND</option>
-            <option>LUTTYS</option>
-            <option>PARTSPL</option>
-            <option>RPI</option>
-            <option>SPEEDWAY</option>
-            <option>SUMMIT</option>
-            <option>WINDY</option>
-          </select>
+          <div className={styles.font} style={{ display: 'block', 
+                  width: 700, 
+                  padding: 30 }}>
+            <Dropdown onSelect={handleSelect}>
+              <Dropdown.Toggle className={styles.font}>
+                DEALER
+              </Dropdown.Toggle>
+              <Dropdown.Menu className={styles.font}>
+                <Dropdown.Item className={styles.itemBg}
+                  eventKey='CENTRAL'>
+                  CENTRAL
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.itemBg} 
+                  eventKey='GROUND'>
+                  GROUND
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.itemBg} 
+                  eventKey='LUTTYS'>
+                  LUTTYS
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.itemBg} 
+                  eventKey='PARTSPL'>
+                  PARTSPL
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.itemBg} 
+                  eventKey='RPI'>
+                  RPI
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.itemBg} 
+                  eventKey='SPEEDWAY'>
+                  SPEEDWAY
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.itemBg} 
+                  eventKey='SUMMIT'>
+                  SUMMIT
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.itemBg} 
+                  eventKey='WINDY'>
+                  WINDY
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>  
         </div>      
        <div id={styles.pointer} 
-         onClick={() =>  copy(company.custNumber)}>Cust#: {company.custNumber}
+         onClick={() =>  copy(dealers.custNumber)}>Cust#: {dealers.custNumber}
        </div>
-       {upsNumber()}
+       {truck(dealers)}
+       {underOver(dealers)}
+       {upsNum(dealers)}
        <div id={styles.pointer} 
-         onClick={() =>  copy(company.po)}>{company.po}
+         onClick={() =>  copy(dealers.po)}>{dealers.po}
        </div>
        <div id={styles.pointer} 
-         onClick={() =>  copy(company.dropShip)}>{company.dropShip}
+         onClick={() =>  copy(dealers.dropShip)}>{dealers.dropShip}
        </div>
-       <div id={styles.pointer} 
-         onClick={() =>  copy(company.truck)}>{company.truck}
-       </div>
-       {over()}
-       {under()}
+       
     </div>
   );
 }

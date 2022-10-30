@@ -1,66 +1,52 @@
-// import { 
-//     speedway, 
-//     rpi, 
-//     windy,
-//     luttys, 
-//     ground, 
-//     summit, 
-//     central,
-//     parts 
-//   } from '../components/data.js'
+import styles from "../styles/Home.module.css";
+import { copy } from "../components/copy.js";
 
-// export const upsNumber = () => {
-//     if (company.upsNumber) {
-//       return (
-//       <div id={styles.pointer}
-//         onClick={() =>  copy(company.upsNumber)}>Ups#: {company.upsNumber}
-//       </div>
-//      )
-//     } else {
-//       return (
-//       <div id={styles.hidden}
-//         onClick={() =>  copy(company.upsNumber)}>Ups#: {company.upsNumber}
-//       </div>
-//      )
-//     }
-//   }
-  
-// export const under = () => {
-//     if (company.under) {
-//       return (
-//       <div id={styles.pointer}
-//         onClick={() =>  copy(company.under)}>Under $100: {company.under}
-//       </div>
-//      )
-//     } else {
-//       return (
-//       <div id={styles.hidden}
-//         onClick={() =>  copy(company.under)}>Under $100: {company.under}
-//       </div>
-//      )
-//     }
-//   }
- 
-// export const over = () => {
-//    if (company.over) {
-//      return (
-//      <div id={styles.pointer}
-//        onClick={() =>  copy(company.over)}>Over $100: {company.over}
-//      </div>
-//     )
-//    } else {
-//      return (
-//      <div id={styles.hidden}
-//        onClick={() =>  copy(company.over)}>Over $100: {company.over}
-//      </div>
-//     )
-//    }
-//  }
+export const upsNum = (category) => {
+    if (category.upsNumber) {
+      return (
+      <div id={styles.pointer}
+        onClick={() =>  copy(category.upsNumber)}>Ups#: {category.upsNumber}
+      </div>
+      )
+    } else {
+      return (
+      <div id={styles.hidden}></div>
+      )
+    }
+  }
 
-// export const conditionalDiv = (categories) => {
-//     return (
-//         <div id={styles}
-//           onClick={() =>  copy(categories)}>Ups#: {categories}
-//         </div>
-//        )
-//     }
+export const truck = (category) => {
+    if (category.truck) {
+      return (
+      <div id={styles.pointer}
+        onClick={() =>  copy(category.truck)}>{category.truck}
+      </div>
+     )
+    } else {
+      return (
+      <div id={styles.hidden}></div>
+     )
+    }
+}
+
+export const underOver = (category) => {
+    if (category.under) {
+      return (
+       <>
+         <div id={styles.pointer}
+         onClick={() =>  copy(category.under)}>Under $100: {category.under}
+         </div>
+         <div id={styles.pointer}
+         onClick={() =>  copy(category.over)}>Over $100: {category.over}
+         </div>
+       </>
+     )
+     } else {
+         return (
+           <>
+           <div id={styles.hidden}></div>
+           <div id={styles.hidden}> </div>
+         </>
+       )
+     }
+   }

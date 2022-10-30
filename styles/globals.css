@@ -5,7 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Oswald', sans-serif;
-  background: #010101;
+  background-color: #F3F2EE;
   height: 100vh;
 }
 
@@ -16,27 +16,5 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-select {
-  font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  background: #010101;
-  color: #E9DE00;
-  border: 1px solid #E9DE00;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-}
-
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }
 
