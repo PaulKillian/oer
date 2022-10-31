@@ -17,7 +17,7 @@ export function AutoSearch(props) {
     {
       compare: 'luttys',
       id: 2,
-      name: 'Luttys',
+      name: "Lutty's Chevys",
     },
     {
       compare: 'partspl',
