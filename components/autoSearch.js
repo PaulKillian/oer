@@ -32,7 +32,7 @@ export function AutoSearch(props) {
     {
       compare: 'speedway',
       id: 5,
-      name: 'Speedway',
+      name: 'Speedway Motors',
     },
     {
       compare: 'summit',
