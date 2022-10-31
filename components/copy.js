@@ -8,7 +8,7 @@ export const copy = (e, toCopy) => {
     
     setTimeout(() => {
         copiedBadgeSpan.innerHTML = ''
-    }, 2000)
+    }, 1500)
 
     navigator.clipboard.writeText(toCopy)
   };

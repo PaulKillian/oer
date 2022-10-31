@@ -1,4 +1,5 @@
 import * as React from "react";
+import Head from "next/head"
 import 'bootstrap/dist/css/bootstrap.css'
 import Dropdown from 'react-bootstrap/Dropdown';
 import styles from "../styles/Home.module.css";
@@ -23,11 +24,12 @@ import rpiImg from '../public/rpi.jpeg'
 import groundupImg from '../public/SS396_Main_Logo.png'
 import camarocentralImg from '../public/camarocentral.gif'
 import windyImg from '../public/windy.webp'
-import {truck, underOver, upsNum} from '../components/conditionalRenders.js'
+import {truck, underOver, upsNum, custNum} from '../components/conditionalRenders.js'
 import { copy } from "../components/copy.js";
+import { AutoSearch } from "../components/autoSearch";
 
 export default function Home() {
-  const company = {
+  const dealersAndImages = {
     'speedway': { categories: speedway, image: speedwayImg },
     'rpi': { categories: rpi, image: rpiImg },
     'windy': { categories: windy, image: windyImg }, 
@@ -38,9 +40,8 @@ export default function Home() {
     'partspl': { categories: partspl, image: partsplImg }
   }
   const [dealers, setDealers] = React.useState({})
-  const [img, setImg] = React.useState(oer);
+  const [image, setimage] = React.useState(oer);
   const [copied, setCopied] = React.useState('');
-  const [clicked, setClicked] = React.useState(false);
 
   const click = () => {
     if (clicked) {
@@ -49,104 +50,59 @@ export default function Home() {
       setClicked(true);
     }
   }
-  
-  const handleSelect = (e) => {
-    setClicked(false);
-
-    const dealer = e.toLowerCase();
-    for (const key in company) {
-      if (key === dealer) {
-        setDealers(company[key].categories)  
-        setImg(company[key].image) 
-        return
-      }
-    }
-  }
-
-  console.log(clicked)
 
   return (
-      <div className={`${clicked ? styles.background : styles.noBackground}`}>
+      <div className={styles.background}>
+        <Head>
+          <link 
+            rel="icon" 
+            type="image/png" 
+            sizes="32x32" 
+            href={oer}>
+          </link>
+        </Head>
         <div className="d-flex align-items-center">
-          <div>
+          <div style={{ paddingLeft: 5, paddingRight: 5 }}>
             <Image 
               width={230} 
               height={200}
               quality={100}
-              src={img}
+              src={image}
               alt="logo"
               objectFit='contain'
             />
-          </div>
-          <div className={styles.font} 
-            style={{ paddingLeft: 5 }}
-            onClick={click}>
-            <Dropdown onSelect={handleSelect}>
-              <Dropdown.Toggle className={styles.font}>
-                DEALER
-              </Dropdown.Toggle>
-              <Dropdown.Menu className={styles.font}>
-                <Dropdown.Item className={styles.itemBg}
-                  eventKey='CENTRAL'>
-                  CENTRAL
-                </Dropdown.Item>
-                <Dropdown.Item className={styles.itemBg} 
-                  eventKey='GROUND'>
-                  GROUND
-                </Dropdown.Item>
-                <Dropdown.Item className={styles.itemBg} 
-                  eventKey='LUTTYS'>
-                  LUTTYS
-                </Dropdown.Item>
-                <Dropdown.Item className={styles.itemBg} 
-                  eventKey='PARTSPL'>
-                  PARTSPL
-                </Dropdown.Item>
-                <Dropdown.Item className={styles.itemBg} 
-                  eventKey='RPI'>
-                  RPI
-                </Dropdown.Item>
-                <Dropdown.Item className={styles.itemBg} 
-                  eventKey='SPEEDWAY'>
-                  SPEEDWAY
-                </Dropdown.Item>
-                <Dropdown.Item className={styles.itemBg} 
-                  eventKey='SUMMIT'>
-                  SUMMIT
-                </Dropdown.Item>
-                <Dropdown.Item className={styles.itemBg} 
-                  eventKey='WINDY'>
-                  WINDY
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
           </div>  
+          <AutoSearch 
+            data={dealersAndImages}
+            dealers={dealers}
+            setDealers={setDealers}
+            image={image}
+            setimage={setimage}
+            dealersAndImages={dealersAndImages}
+            />
         </div>  
-       <div className='d-flex align-items-center'>
-        <div id='custNum' className={styles.pointer}
-          onClick={() =>  copy(event, dealers.custNumber)}>Cust#: {dealers.custNumber}
+        <div className='d-flex align-items-center'>
+          {custNum(dealers)}
         </div>
-       </div>
-       
-       <div className='d-flex align-items-center'>
-        {truck(dealers)}
-       </div>
-       <div className='d-flex align-items-center'>
-        {underOver(dealers)}
-       </div>
-       <div className='d-flex align-items-center'>
-        {upsNum(dealers)}
-       </div>
-       <div className='d-flex align-items-center'>
-        <div id='po' className={styles.pointer}
-          onClick={() =>  copy(event, dealers.po)}>{dealers.po}
+        <div className='d-flex align-items-center'>
+          {truck(dealers)}
         </div>
-       </div>
-       <div className='d-flex align-items-center'>
-        <div id='dropShip' className={styles.pointer}
-          onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
+        <div>
+          {underOver(dealers)}
         </div>
-       </div>
+        <div className='d-flex align-items-center'>
+          {upsNum(dealers)}
+        </div>
+        <div className='d-flex align-items-center'>
+          <div id='po' className={styles.pointer}
+            onClick={() =>  copy(event, dealers.po)}>{dealers.po}
+          </div>
+        </div>
+        <div className='d-flex align-items-center'>
+          <div id='dropShip' className={styles.pointer}
+            onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
+          </div>
+        </div>
     </div>
   );
 }

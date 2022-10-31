@@ -6,7 +6,7 @@
 }
 
 .pointer:hover {
-  color: #085ED6
+  color: #006aff
 }
 
 #hidden {
@@ -21,21 +21,22 @@
 
 .font {
   font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .itemBg {
-  background-color: #ffffff;
-}
-
-.itemBg:hover {
   background-color: #237fff;
   color: #ffffff;
 }
 
+.itemBg:hover {
+  background-color: #ffffff;
+  color: #237fff
+}
+
 .background {
   position:absolute;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #fafafa;
   top: 0;
   left: 0;
   bottom: 0;
@@ -44,4 +45,12 @@
 
 .fitContent {
   height: fit-content;
+}
+
+.shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.cmyNjn > .wrapper {
+  border-radius: 5px !important;
 }

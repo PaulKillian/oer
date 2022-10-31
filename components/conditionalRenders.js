@@ -1,6 +1,20 @@
 import styles from "../styles/Home.module.css";
 import { copy } from "../components/copy.js";
 
+export const custNum = (category) => {
+  if (category.custNumber) {
+    return (
+    <div id={'custNum'} className={styles.pointer}
+      onClick={() =>  copy(event, category.custNumber)}>Cust#: {category.custNumber}
+    </div>
+    )
+  } else {
+    return (
+    <div id={styles.hidden}></div>
+    )
+  }
+}
+
 export const upsNum = (category) => {
     if (category.upsNumber) {
       return (
@@ -33,12 +47,17 @@ export const underOver = (category) => {
     if (category.under) {
       return (
        <>
-         <div id={'under'} className={styles.pointer}
-         onClick={() =>  copy(event, category.under)}>Under $100: {category.under}
+         <div className='d-flex align-items-center'>
+          <div id={'under'} className={styles.pointer}
+            onClick={() =>  copy(event, category.under)}>Under $100: {category.under}
+          </div>
          </div>
-         <div id={'over'} className={styles.pointer}
-         onClick={() =>  copy(event, category.over)}>Over $100: {category.over}
+         <div className='d-flex align-items-center'>
+          <div id={'over'} className={styles.pointer}
+            onClick={() =>  copy(event, category.over)}>Over $100: {category.over}
+          </div>
          </div>
+         
        </>
      )
      } else {
