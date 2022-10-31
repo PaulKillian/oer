@@ -92,7 +92,7 @@ export function AutoSearch(props) {
             showIcon={false}
             styling={{
               height: "34px",
-              border: "1px solid darkgreen",
+              border: "3px solid black",
               borderRadius: "4px",
               backgroundColor: "white",
               boxShadow: "none",
