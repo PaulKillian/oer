@@ -12,7 +12,7 @@ export function AutoSearch(props) {
     {
       compare: 'ground',
       id: 1,
-      name: 'Ground Up',
+      name: 'Ground Up Motors',
     },
     {
       compare: 'luttys',
@@ -22,7 +22,7 @@ export function AutoSearch(props) {
     {
       compare: 'partspl',
       id: 3,
-      name: 'Parts Place'
+      name: 'The Parts Place'
     },
     {
       compare: 'rpi',
@@ -37,12 +37,12 @@ export function AutoSearch(props) {
     {
       compare: 'summit',
       id: 6,
-      name: 'Summit Racing',
+      name: 'Summit Racing Equipment',
     },
     {
       compare: 'windy',
       id: 7,
-      name: 'Windy City',
+      name: 'Windy City Muscle Cars',
     }
   ]
 
