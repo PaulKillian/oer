@@ -53,14 +53,6 @@ export default function Home() {
 
   return (
       <div className={styles.background}>
-        <Head>
-          <link 
-            rel="icon" 
-            type="image/png" 
-            sizes="32x32" 
-            href={oer}>
-          </link>
-        </Head>
         <div className="d-flex align-items-center">
           <div style={{ paddingLeft: 5, paddingRight: 5 }}>
             <Image 
