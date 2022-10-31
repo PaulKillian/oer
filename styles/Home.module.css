@@ -1,12 +1,16 @@
-.pointer {
+.pointer, windyHover {
   font-family: 'Oswald', sans-serif;
   cursor: pointer;
   padding: 5px;
   font-size: xxx-large;
 }
 
-.pointer:hover {
+.pointer:hover, {
   color: #006aff
+}
+
+.windyHover:hover {
+  color: #D33B33
 }
 
 #hidden {
