@@ -91,7 +91,6 @@ export function AutoSearch(props) {
             formatResult={formatResult}
             showIcon={false}
             styling={{
-              font-family: "Oswald",
               height: "34px",
               border: "3px solid black",
               borderRadius: "4px",
