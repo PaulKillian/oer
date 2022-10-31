@@ -4,13 +4,13 @@ import { copy } from "../components/copy.js";
 export const custNum = (category) => {
   if (category.custNumber === "8449560") {
     return (
-    <div id={'custNum'} className={styles.pointer}
+    <div id={'custNum'} className={styles.windyHover}
       onClick={() =>  copy(event, category.custNumber)}>Cust#: {category.custNumber}
     </div>
     )
   } else if (category.custNumber) {
     return (
-    <div id={'custNum'} className={styles.windyHover}
+    <div id={'custNum'} className={styles.pointer}
       onClick={() =>  copy(event, category.custNumber)}>Cust#: {category.custNumber}
     </div>
     )
