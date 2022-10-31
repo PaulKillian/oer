@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.css";
 import { copy } from "../components/copy.js";
 
 export const custNum = (category) => {
+  console.log(category)
   if (category.custNumber) {
     return (
     <div id={'custNum'} className={styles.pointer}
