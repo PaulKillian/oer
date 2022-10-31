@@ -65,13 +65,10 @@ export default function Home() {
             />
           </div>  
           <AutoSearch 
-            data={dealersAndImages}
-            dealers={dealers}
             setDealers={setDealers}
-            image={image}
             setimage={setimage}
             dealersAndImages={dealersAndImages}
-            />
+          />
         </div>  
         <div className='d-flex align-items-center'>
           {custNum(dealers)}

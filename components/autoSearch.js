@@ -3,7 +3,6 @@ import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import Home from '../pages/index.js'
 
 export function AutoSearch(props) {
-    console.log(props)
   const items = [
     { 
       compare: 'central',
@@ -90,6 +89,21 @@ export function AutoSearch(props) {
             // onFocus={handleOnFocus}
             autoFocus
             formatResult={formatResult}
+            showIcon={false}
+            styling={{
+              height: "34px",
+              border: "1px solid darkgreen",
+              borderRadius: "4px",
+              backgroundColor: "white",
+              boxShadow: "none",
+              hoverBackgroundColor: "lightGray",
+              color: "black",
+              fontSize: "16px",
+              iconColor: "black",
+              lineColor: "black",
+              clearIconMargin: "3px 8px 0 0",
+              zIndex: 2,
+            }}
           />
         </div>
       </header>
