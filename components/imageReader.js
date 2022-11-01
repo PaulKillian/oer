@@ -42,7 +42,8 @@ function ImageReader(packet){
     }, [])
     
 
-const worker = new Tesseract.TesseractWorker();
+const { createWorker } = require("tesseract.js");
+const worker = createWorker();
   worker.recognize(file, $("#langsel").val())
   .progress(function(packet){
       console.info(packet)
