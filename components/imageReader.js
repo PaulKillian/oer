@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Image from 'next/image'
 
 function ImageReader(packet){
+    const [selectedImage, setSelectedImage] = useState(null);
     
 
 // const { createWorker } = require("tesseract.js");
@@ -23,7 +24,15 @@ function ImageReader(packet){
         <select id="langsel">
          <option value='eng' selected> English </option>
         </select>
-        <input type="file" id="file-1" class="inputfile" />
+        <input 
+          type="file" 
+          id="file-1" 
+          class="inputfile" 
+          onChange={(event) => {
+          console.log(event.target.files[0]);
+          setSelectedImage(event.target.files[0]);
+        }}
+          />
         <div id="log">
             <span id="startPre">  
             <a id="startLink" href="#">Click here to recognize text</a> or choose your own image
