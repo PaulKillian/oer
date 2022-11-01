@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 
 function ImageReader(packet){
-    var log = document.getElementById('log');
+    useEffect(() => {
+        var log = document.getElementById('log');
  
     if(log.firstChild && log.firstChild.status === packet.status){
         if('progress' in packet){
@@ -37,6 +38,8 @@ function ImageReader(packet){
  
         log.insertBefore(line, log.firstChild)
     }
+    }, [])
+    
 
 const worker = new Tesseract.TesseractWorker();
   worker.recognize(file, $("#langsel").val())
