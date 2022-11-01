@@ -49,6 +49,7 @@ const worker = new Tesseract.TesseractWorker();
   })
 
   return (
+     <>
     <select id="langsel">
      <option value='eng' selected> English </option>
     </select>
@@ -58,7 +59,7 @@ const worker = new Tesseract.TesseractWorker();
     <span id="startPre">  
      <a id="startLink" href="#">Click here to recognize text</a> or choose your own image
     </span>
-</div>
+        </div>
   );
 }
 
