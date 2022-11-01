@@ -45,7 +45,7 @@ function ImageReader(packet){
 
 const { createWorker } = require("tesseract.js");
 const worker = createWorker();
-  worker.recognize(file, $("#langsel").val())
+  worker.recognize(file, $("#file-1").val())
   .progress(function(packet){
       console.info(packet)
       progressUpdate(packet)
