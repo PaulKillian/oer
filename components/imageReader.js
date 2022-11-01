@@ -21,9 +21,6 @@ function ImageReader(packet){
 
   return (
      <div>
-        <select id="langsel">
-         <option value='eng' selected> English </option>
-        </select>
         <input 
           type="file" 
           id="file-1" 
@@ -33,7 +30,7 @@ function ImageReader(packet){
           setSelectedImage(event.target.files[0]);
         }}
           />
-   </div>
+    </div>
   );
 }
 
