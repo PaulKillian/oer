@@ -1,25 +1,25 @@
 export const ground = {
-    custNumber: '284546',
+    custNumber: process.env.GROUND_UP_CUST_NUM,
     dropShip: 'DROPSHIP1',
     upsNumber: '36Y163',
     po: 'PO#'
   }
 
 export const luttys = {
-    custNumber: '324040',
+    custNumber: process.env.LUTTYS_CUST_NUM,
     upsNumber: '189743 only use if Requested by cust',
     po: 'PO#'
   }
 
 export const rpi = {
-    custNumber: '8743326',
+    custNumber: process.env.RPI_CUST_NUM,
     upsNumber: 'Y8Y794',
     dropShip: 'DROPSHIP1',
     po: 'PO#'
   }
 
 export const speedway = {
-    custNumber: '8238355',
+    custNumber: process.env.SPEEDWAY_CUST_NUM,
     upsNumber: '635358',
     dropShip: 'DROPSHIP3', 
     truck: 'PO# , SHIPS TRUCK FRIEGHT',
@@ -27,7 +27,7 @@ export const speedway = {
   }
 
 export const summit = {
-    custNumber: '706183',
+    custNumber: process.env.SUMMIT_CUST_NUM,
     dropShip: 'DROPSHIP3',
     upsNumber: '44958X',
     truck: 'PO# , Ship Schneider Truck Freight. No Liftgate needed',
@@ -35,21 +35,21 @@ export const summit = {
   }
 
 export const windy = {
-    custNumber: '8449560',
+    custNumber: process.env.WINDY_CUST_NUM,
     po: 'PO#',
     under: 'DROPSHIP2',
     over: 'DROPSHIP1'
   }
 
 export const central = {
-    custNumber: '7166903',
+    custNumber: process.env.CAMARO_CENTRAL_CUST_NUM,
     dropShip: 'DROPSHIP1',
     upsNumber: 'X663X2',
     po: 'PO#'
   }
 
 export const partspl = {
-    custNumber: '358564',
+    custNumber: process.env.THE_PARTS_PLACE_CUST_NUM,
     dropShip: 'DROPSHIP1',
     upsNumber: 'A83V25',
     po: 'PO#'
