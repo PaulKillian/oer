@@ -60,6 +60,7 @@ const worker = new Tesseract.TesseractWorker();
      <a id="startLink" href="#">Click here to recognize text</a> or choose your own image
     </span>
         </div>
+      </>
   );
 }
 
