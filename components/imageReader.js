@@ -23,7 +23,7 @@ function ImageReader(packet){
         <select id="langsel">
          <option value='eng' selected> English </option>
         </select>
-        <Image id="selected-image"  alt='' src="" />
+        <input type="file" id="file-1" class="inputfile" />
         <div id="log">
             <span id="startPre">  
             <a id="startLink" href="#">Click here to recognize text</a> or choose your own image
