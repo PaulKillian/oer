@@ -33,12 +33,7 @@ function ImageReader(packet){
           setSelectedImage(event.target.files[0]);
         }}
           />
-        <div id="log">
-            <span id="startPre">  
-            <a id="startLink" href="#">Click here to recognize text</a> or choose your own image
-        </span>
-    </div>
-  </div>
+   </div>
   );
 }
 
