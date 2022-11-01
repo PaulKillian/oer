@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function progressUpdate(packet){
+function ImageReader(packet){
     var log = document.getElementById('log');
  
     if(log.firstChild && log.firstChild.status === packet.status){
@@ -8,7 +8,7 @@ function progressUpdate(packet){
             var progress = log.firstChild.querySelector('progress')
             progress.value = packet.progress
         }
-    }else{
+    } else {
         var line = document.createElement('div');
         line.status = packet.status;
         var status = document.createElement('div')
@@ -36,7 +36,6 @@ function progressUpdate(packet){
  
         log.insertBefore(line, log.firstChild)
     }
-}
 
 const worker = new Tesseract.TesseractWorker();
   worker.recognize(file, $("#langsel").val())
