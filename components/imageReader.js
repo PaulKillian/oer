@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image'
 
 function ImageReader(packet){
     var log = document.getElementById('log');
@@ -49,18 +50,18 @@ const worker = new Tesseract.TesseractWorker();
   })
 
   return (
-     <>
-    <select id="langsel">
-     <option value='eng' selected> English </option>
-    </select>
-    <input type="file" id="file-1" class="inputfile" />
-    <img id="selected-image"  src="" />
-    <div id="log">
-    <span id="startPre">  
-     <a id="startLink" href="#">Click here to recognize text</a> or choose your own image
-    </span>
-        </div>
-      </>
+     <div>
+        <select id="langsel">
+         <option value='eng' selected> English </option>
+        </select>
+        <input type="file" id="file-1" class="inputfile" />
+        <Image id="selected-image"  src="" />
+        <div id="log">
+            <span id="startPre">  
+            <a id="startLink" href="#">Click here to recognize text</a> or choose your own image
+        </span>
+    </div>
+  </div>
   );
 }
 
