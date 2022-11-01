@@ -43,17 +43,17 @@ function ImageReader(packet){
     })
     
 
-const { createWorker } = require("tesseract.js");
-const worker = createWorker();
-  worker.recognize(file, $("#file-1").val())
-  .progress(function(packet){
-      console.info(packet)
-      progressUpdate(packet)
-  })
-  .then(function(data){
-      console.log(data)
-      progressUpdate({ status: 'done', data: data })
-  })
+// const { createWorker } = require("tesseract.js");
+// const worker = createWorker();
+//   worker.recognize(file, $("#file-1").val())
+//   .progress(function(packet){
+//       console.info(packet)
+//       progressUpdate(packet)
+//   })
+//   .then(function(data){
+//       console.log(data)
+//       progressUpdate({ status: 'done', data: data })
+//   })
 
   return (
      <div>
