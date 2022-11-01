@@ -27,6 +27,8 @@ import windyImg from '../public/windy.webp'
 import {truck, underOver, upsNum, custNum} from '../components/conditionalRenders.js'
 import { copy } from "../components/copy.js";
 import { AutoSearch } from "../components/autoSearch";
+import ImageReader from "../components/imageReader";
+import { Upload } from "../components/upload";
 
 export default function Home() {
   const dealersAndImages = {
@@ -42,14 +44,6 @@ export default function Home() {
   const [dealers, setDealers] = React.useState({})
   const [image, setimage] = React.useState(oer);
   const [copied, setCopied] = React.useState('');
-
-  const click = () => {
-    if (clicked) {
-      setClicked(false)
-    } else {
-      setClicked(true);
-    }
-  }
 
   return (
       <div className={styles.background}>
@@ -92,6 +86,8 @@ export default function Home() {
             onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
           </div>
         </div>
+      {/* <ImageReader /> */}
+      {/* <Upload /> */}
     </div>
   );
 }
