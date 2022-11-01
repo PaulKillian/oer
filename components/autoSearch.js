@@ -12,17 +12,17 @@ export function AutoSearch(props) {
     {
       compare: 'ground',
       id: 1,
-      name: 'Ground Up',
+      name: 'Ground Up Motors',
     },
     {
       compare: 'luttys',
       id: 2,
-      name: 'Luttys',
+      name: "Lutty's Chevys",
     },
     {
       compare: 'partspl',
       id: 3,
-      name: 'Parts Place'
+      name: 'The Parts Place'
     },
     {
       compare: 'rpi',
@@ -32,17 +32,17 @@ export function AutoSearch(props) {
     {
       compare: 'speedway',
       id: 5,
-      name: 'Speedway',
+      name: 'Speedway Motors',
     },
     {
       compare: 'summit',
       id: 6,
-      name: 'Summit Racing',
+      name: 'Summit Racing Equipment',
     },
     {
       compare: 'windy',
       id: 7,
-      name: 'Windy City',
+      name: 'Windy City Muscle Cars',
     }
   ]
 
@@ -92,7 +92,7 @@ export function AutoSearch(props) {
             showIcon={false}
             styling={{
               height: "34px",
-              border: "1px solid darkgreen",
+              border: "3px solid black",
               borderRadius: "4px",
               backgroundColor: "white",
               hoverBackgroundColor: "lightGray",
