@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Tesseract from 'tesseract.js';
-import $ from 'jquery'; 
 import Image from 'next/image'
 
 function ImageReader(packet){
