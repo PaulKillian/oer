@@ -1,54 +1,26 @@
-import { useState } from "react";
-import { storage } from './storage';
-import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage"
-import Image from "next/image";
+import {useState} from 'react';
+import supabase from './supabase';
 
-export default function Upload() {
-  const [imgUrl, setImgUrl] = useState(null);
-  const [progresspercent, setProgresspercent] = useState(0);
+export function Upload() {
+  const avatarFile = event.target.files[0]
+  const { data, error } = await supabase
+    .storage
+    .from('avatars')
+    .upload('public/avatar1.png', avatarFile, {
+      cacheControl: '3600',
+      upsert: false
+    })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const file = e.target[0]?.files[0]
+     return (
+       <div className="App">
+         <form>
+           <input 
+             type="file"
+           />
+         <button type='submit'></button>
+         </form>
+       </div>
+     );
+   }
 
-    if (!file) return;
-
-    const storageRef = ref(storage, `files/${file.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, file);
-
-    uploadTask.on("state_changed",
-      (snapshot) => {
-        const progress =
-          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-        setProgresspercent(progress);
-      },
-      (error) => {
-        alert(error);
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setImgUrl(downloadURL)
-        });
-      }
-    );
-  }
-
-  return (
-    <div className="App">
-      <form onSubmit={handleSubmit} className='form'>
-        <input type='file' />
-        <button type='submit'>Upload</button>
-      </form>
-      {
-        !imgUrl &&
-        <div className='outerbar'>
-          <div className='innerbar' style={{ width: `${progresspercent}%` }}>{progresspercent}%</div>
-        </div>
-      }
-      {
-        imgUrl &&
-        <Image alt={'upload'} src={imgUrl} height={200} />
-      }
-    </div>
-  );
-}
+   
