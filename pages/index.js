@@ -86,8 +86,8 @@ export default function Home() {
             onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
           </div>
         </div>
-      {/* <ImageReader /> */}
-      {/* <Upload /> */}
+      <ImageReader />
+      <Upload />
     </div>
   );
 }

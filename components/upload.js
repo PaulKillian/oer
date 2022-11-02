@@ -1,25 +1,24 @@
-// import {useState} from 'react';
-// import storage from './firebaseStorage';
+import {useState} from 'react';
 
-// export function Upload() {
-//     const allInputs = {imgUrl: ''}
-//     const [imageAsFile, setImageAsFile] = useState('')
-//     const [imageAsUrl, setImageAsUrl] = useState(allImputs)
+export function Upload() {
+    const allInputs = {imgUrl: ''}
+    const [imageAsFile, setImageAsFile] = useState('')
+    const [imageAsUrl, setImageAsUrl] = useState('')
 
-//     console.log(imageAsFile)
-//     const handleImageAsFile = (e) => {
-//       const image = e.target.files[0]
-//       setImageAsFile(imageFile => (image))
-//     }
+    console.log(imageAsFile)
+    const handleImageAsFile = (e) => {
+      const image = e.target.files[0]
+      setImageAsFile(imageFile => (image))
+    }
 
-//     return (
-//       <div className="App">
-//         <form>
-//           <input 
-//             type="file"
-//             onChange={handleImageAsFile}
-//           />
-//         </form>
-//       </div>
-//     );
-//   }
+    return (
+      <div className="App">
+        <form>
+          <input 
+            type="file"
+            onChange={handleImageAsFile}
+          />
+        </form>
+      </div>
+    );
+  }
