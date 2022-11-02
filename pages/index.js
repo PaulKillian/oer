@@ -64,7 +64,7 @@ export default function Home() {
             dealersAndImages={dealersAndImages}
           />
         </div>
-        <h1 style={{color: 'red'}}>CHANGE ADDRESS!<h1>
+        <div style={{color: 'red'}}>CHANGE ADDRESS!</div>
         <div className='d-flex align-items-center'>
           {custNum(dealers)}
         </div>
