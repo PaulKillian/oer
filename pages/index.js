@@ -68,9 +68,9 @@ export default function Home() {
           {custNum(dealers)}
         </div>
         <div className='d-flex align-items-center'>
-          <div id='po' className={styles.pointer}
+          <p id='po' className={styles.pointer}
             onClick={() =>  copy(event, dealers.po)}>{dealers.po}
-          </div>
+          </p>
         </div>
         <div className='d-flex align-items-center'>
           {truck(dealers)}
