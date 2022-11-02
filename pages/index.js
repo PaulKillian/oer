@@ -63,7 +63,8 @@ export default function Home() {
             setimage={setimage}
             dealersAndImages={dealersAndImages}
           />
-        </div>  
+        </div>
+        <h1 style={{color: 'red'}}>CHANGE ADDRESS!<h1>
         <div className='d-flex align-items-center'>
           {custNum(dealers)}
         </div>
