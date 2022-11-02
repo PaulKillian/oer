@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { createWorker } from 'tesseract.js';
+import Tesseract from 'tesseract.js';
+import $ from 'jquery'; 
+import Image from 'next/image'
 
-function ImageReader() {
-  const worker = createWorker({
-    logger: m => console.log(m),
-  });
-  const doOCR = async () => {
-    await worker.load();
-    await worker.loadLanguage('eng');
-    await worker.initialize('eng');
-    const { data: { text } } = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
-    setOcr(text);
-  };
-  const [ocr, setOcr] = useState('Recognizing...');
-  useEffect(() => {
-    doOCR();
-  });
+function ImageReader(packet){
+    const [selectedImage, setSelectedImage] = useState(null);
+    
+
+// const { createWorker } = require("tesseract.js");
+// const worker = createWorker();
+//   worker.recognize(file, $("#file-1").val())
+//   .progress(function(packet){
+//       console.info(packet)
+//       progressUpdate(packet)
+//   })
+//   .then(function(data){
+//       console.log(data)
+//       progressUpdate({ status: 'done', data: data })
+//   })
+
   return (
-    <div className="App">
-      <p>{ocr}</p>
+     <div>
+        <input 
+          type="file" 
+          id="file-1" 
+          class="inputfile" 
+          onChange={(event) => {
+          console.log(event.target.files[0]);
+          setSelectedImage(event.target.files[0]);
+        }}
+          />
     </div>
   );
 }

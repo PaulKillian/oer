@@ -20,7 +20,8 @@
     "react-dom": "18.2.0",
     "react-popper": "^2.3.0",
     "react-search-autocomplete": "^8.0.0",
-    "tesseract.js": "^2.1.1"
+    "tesseract.js": "^2.1.1",
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
     "eslint": "8.25.0",
