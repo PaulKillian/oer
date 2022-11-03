@@ -5,7 +5,7 @@ import windyFormat from './formats.js';
 
 function ImageReader(props) {
   const [orderText, setOrderText] = useState(null);
-  const [arrayForFormatting, setarrayForFormattting] = useState([])
+  const [arrayForFormatting, setArrayForFormattting] = useState([])
 
   const getOrders = () => {
 //     Tesseract.recognize(
