@@ -63,33 +63,34 @@ export default function Home() {
             dealersAndImages={dealersAndImages}
           />
         </div>
-        <div className="d-flex">
-          <div className="flex-grow-1">
-            <div style={{color: 'red'}} className={styles.pointer}>CHANGE ADDRESS!</div>
-            <div className='d-flex align-items-center'>
-              {custNum(dealers)}
-            </div>
-            <div className='d-flex align-items-center'>
-              <p id='po' className={styles.pointer}
-                onClick={() =>  copy(event, dealers.po)}>{dealers.po}
-              </p>
-            </div>
-            <div className='d-flex align-items-center'>
-              {truck(dealers)}
-            </div>
-            <div>
-              {underOver(dealers)}
-            </div>
-            <div className='d-flex align-items-center'>
-              {upsNum(dealers)}
-            </div>
-            <div className='d-flex align-items-center'>
-              <div id='dropShip' className={styles.pointer}
-                onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
+        <div className="constainer">
+          <div className="row">
+            <div className="col-sm">
+              <div style={{color: 'red'}} className={styles.pointer}>CHANGE ADDRESS!</div>
+              <div className='d-flex align-items-center'>
+                {custNum(dealers)}
               </div>
-            </div>
+              <div>
+                <p id='po' className={styles.pointer}
+                  onClick={() =>  copy(event, dealers.po)}>{dealers.po}
+                </p>
+              </div>
+              <div>
+                {truck(dealers)}
+              </div>
+              <div>
+                {underOver(dealers)}
+              </div>
+              <div'>
+                {upsNum(dealers)}
+              </div>
+              <div className='d-flex align-items-center'>
+                <div id='dropShip' className={styles.pointer}
+                  onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
+                </div>
+              </div>
           </div>
-        <div>
+        <div className="col-sm">>
           <Upload />
         </div>
       </div>
