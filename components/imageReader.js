@@ -3,12 +3,11 @@ import Tesseract from 'tesseract.js';
 import Image from 'next/image'
 
 function ImageReader(props) {
-  console.log
   const [orderText, setOrderText] = useState(null);
 
   const getOrders = () => {
     Tesseract.recognize(
-        `${props.url}`,
+        `${props.url.publicUrl}`,
         'eng',
         { logger: m => console.log(m) }
       ).then(({ data: { text } }) => {
@@ -18,7 +17,10 @@ function ImageReader(props) {
   }
 
   return (
+    <>
      <button onClick={getOrders}>Get Orders</button>
+     <div>{orderText}</div>
+    </>
   );
 }
 

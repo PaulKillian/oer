@@ -20,8 +20,6 @@ export function Upload() {
         }
     }, [file])
 
-    console.log(url)
-
     const handleUpload = (event) => {
         let file;
     
