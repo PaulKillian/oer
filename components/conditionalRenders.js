@@ -5,7 +5,8 @@ export const custNum = (category) => {
   if (category.custNumber === "8449560") {
     return (
     <div id={'custNum'} className={styles.windyHover}
-      onClick={() =>  copy(event, category.custNumber)}>Cust#: {category.custNumber}
+      onClick={() =>  copy(event, category.custNumber)}>
+        <span style={{color: 'green'}}>Cust#:</span> {category.custNumber}
     </div>
     )
   } else if (category.custNumber) {
