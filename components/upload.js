@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import styles from "../styles/Home.module.css";
 import { supabase } from './supabase';
 import { ChangeEvent } from "react";
 import Image from 'next/image';
@@ -39,7 +40,7 @@ export function Upload() {
         type="file" 
         name="file" 
         id="file" 
-        class="inputfile" 
+        className={styles.inputfile} 
         onChange={(event) => {
             handleUpload(event); // 👈 this will trigger when user selects the file.
         }}
