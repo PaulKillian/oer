@@ -18,7 +18,7 @@ function ImageReader(props) {
 
   return (
     <>
-     <button onClick={getOrders}>Get Orders</button>
+     <button type="button" className="btn btn-dark">Get Orders</button>
      <div>{orderText}</div>
     </>
   );
