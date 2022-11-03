@@ -5,7 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Oswald', sans-serif;
-  background-color: #EBEBF1;
+  background-color: #efefef;
   height: 100vh;
 }
 
@@ -17,3 +17,4 @@ a {
 * {
   box-sizing: border-box;
 }
+

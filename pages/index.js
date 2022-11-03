@@ -62,14 +62,15 @@ export default function Home() {
             setimage={setimage}
             dealersAndImages={dealersAndImages}
           />
-        </div>  
+        </div>
+        <div style={{color: 'red'}} className={styles.pointer}>CHANGE ADDRESS!</div>
         <div className='d-flex align-items-center'>
           {custNum(dealers)}
         </div>
         <div className='d-flex align-items-center'>
-          <div id='po' className={styles.pointer}
+          <p id='po' className={styles.pointer}
             onClick={() =>  copy(event, dealers.po)}>{dealers.po}
-          </div>
+          </p>
         </div>
         <div className='d-flex align-items-center'>
           {truck(dealers)}
