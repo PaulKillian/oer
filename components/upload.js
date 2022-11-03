@@ -41,13 +41,20 @@ export function Upload() {
         name="file" 
         id="file" 
         className={styles.inputfile} 
+        data-multiple-caption="{count} files selected" multiple
         onChange={(event) => {
             handleUpload(event); // 👈 this will trigger when user selects the file.
         }}
        />
-       <label for="file">Choose a file</label> 
-    <ImageReader url={url}/>
-    </div>
+        {file
+            ? <label htmlFor="file">{file}</label>
+            : <label htmlFor="file">Choose a file</label>
+        }
+        <ImageReader 
+            url={url}
+            file={file}
+        />
+        </div>
     );
 };
 
