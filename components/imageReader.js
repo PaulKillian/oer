@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Tesseract from 'tesseract.js';
-import Image from 'next/image'
+import Image from 'next/image';
+import windyFormat from './formats.js';
 
 function ImageReader(props) {
   const [orderText, setOrderText] = useState(null);
+  
 
   const getOrders = () => {
 //     Tesseract.recognize(
