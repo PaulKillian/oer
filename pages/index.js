@@ -81,7 +81,7 @@ export default function Home() {
               <div>
                 {underOver(dealers)}
               </div>
-              <div'>
+              <div>
                 {upsNum(dealers)}
               </div>
               <div className='d-flex align-items-center'>
