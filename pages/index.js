@@ -84,13 +84,13 @@ export default function Home() {
               <div>
                 {upsNum(dealers)}
               </div>
-              <div className='d-flex align-items-center'>
+              <div>
                 <div id='dropShip' className={styles.pointer}
                   onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
                 </div>
               </div>
           </div>
-        <div className="col-sm">>
+        <div className="col-sm">
           <Upload />
         </div>
       </div>
