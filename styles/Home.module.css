@@ -65,7 +65,6 @@
   overflow: hidden;
   position: absolute;
   z-index: -1;
-  font-family: Oswald;
 }
 
 .inputfile + label {
@@ -78,7 +77,8 @@
   padding: 10px;
   border-radius: 5px;
   outline: 1px dotted #000;
-	outline: -webkit-focus-ring-color auto 5px;
+  outline: -webkit-focus-ring-color auto 5px;
+  font-family: Oswald;
 }
 
 .inputfile:focus + label,
