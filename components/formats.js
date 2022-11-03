@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 
-const windyFormat = () => {
+export const windyFormat = (props) => {
   const [format, setFormat] = useState([])
+  
   return (
     return
   )
