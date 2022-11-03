@@ -25,7 +25,7 @@ function ImageReader(props) {
       await worker.load();
       await worker.loadLanguage('eng');
       await worker.initialize('eng');
-      const { data: { text } } = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
+      const { data: { text } } = await worker.recognize(`${props.url.publicUrl}`);
       console.log(text);
       setOrderText(text)
       await worker.terminate();
