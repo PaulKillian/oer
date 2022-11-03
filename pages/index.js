@@ -27,7 +27,6 @@ import windyImg from '../public/windy.webp'
 import {truck, underOver, upsNum, custNum} from '../components/conditionalRenders.js'
 import { copy } from "../components/copy.js";
 import { AutoSearch } from "../components/autoSearch";
-import ImageReader from "../components/imageReader";
 import { Upload } from "../components/upload";
 
 export default function Home() {
@@ -86,9 +85,7 @@ export default function Home() {
             onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
           </div>
         </div>
-      {/* <ImageReader /> */}
       <Upload />
-      <button type='submit'>Upload</button>
     </div>
   );
 }
