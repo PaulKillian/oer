@@ -1,0 +1,5 @@
+const windyFormat = () => {
+  return (
+    return
+  )
+}
