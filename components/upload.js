@@ -35,7 +35,7 @@ export function Upload() {
     };
         
     return (
-    <div className="d-flex flex-row align-items-center">
+    <div className="d-flex flex-column align-items-center">
        <input 
         type="file" 
         name="file" 
