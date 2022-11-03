@@ -46,7 +46,6 @@ export function Upload() {
         }}
        />
        <label for="file">Choose a file</label> 
-      />
     <ImageReader url={url}/>
     </div>
     );
