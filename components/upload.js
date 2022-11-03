@@ -35,7 +35,7 @@ export function Upload() {
     };
         
     return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div>
        <input 
         type="file" 
         name="file" 
