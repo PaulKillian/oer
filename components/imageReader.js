@@ -5,7 +5,7 @@ import windyFormat from './formats.js';
 
 function ImageReader(props) {
   const [orderText, setOrderText] = useState(null);
-  
+  const [arrayForFormatting, setarrayForFormattting] = useState([])
 
   const getOrders = () => {
 //     Tesseract.recognize(
@@ -30,7 +30,8 @@ function ImageReader(props) {
 //       const { data: { text } } = await worker.recognize(`${props.url.publicUrl}`);
       const { data: { text } } = await worker.recognize(`https://pxdjpkeggdohvscyfpxw.supabase.co/storage/v1/object/public/oer-images/public/2022_10_31_12_36_17-1.jpg`);
       console.log(text);
-      setOrderText(text)
+      setOrderText(text);
+      setArrayForFormatting(text);
       await worker.terminate();
     })();
   }
@@ -50,6 +51,7 @@ function ImageReader(props) {
         </button>
     }
      <div>{orderText}</div>
+     <div array={arrayForFormatting}>{windyFormat}</div>
     </>
   );
 }
