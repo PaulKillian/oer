@@ -89,11 +89,12 @@ export default function Home() {
                   onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
                 </div>
               </div>
+            </div>
+            <div className="col-sm">
+              <Upload />
+            </div>
           </div>
-        <div className="col-sm">
-          <Upload />
         </div>
       </div>
-    </div>
   );
 }
