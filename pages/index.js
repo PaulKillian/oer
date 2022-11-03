@@ -72,7 +72,7 @@ export default function Home() {
               </div>
               <div>
                 <p id='po' className={styles.pointer}
-                  onClick={() =>  copy(event, dealers.po)}>{dealers.po}
+                  onClick={() =>  copy(event, dealers.po)}>- {dealers.po}
                 </p>
               </div>
               <div>
@@ -86,7 +86,7 @@ export default function Home() {
               </div>
               <div>
                 <div id='dropShip' className={styles.pointer}
-                  onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
+                  onClick={() =>  copy(event, dealers.dropShip)}>- {dealers.dropShip}
                 </div>
               </div>
             </div>
