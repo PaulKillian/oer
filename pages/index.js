@@ -62,6 +62,7 @@ export default function Home() {
             setimage={setimage}
             dealersAndImages={dealersAndImages}
           />
+        </div>
         <div className="constainer">
           <div className="row">
             <div className="col-sm">
