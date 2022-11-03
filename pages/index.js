@@ -63,8 +63,8 @@ export default function Home() {
             dealersAndImages={dealersAndImages}
           />
         </div>
-        <div className="d-flex align-items-center justify-content-center">
-          <div>
+        <div className="d-flex">
+          <div className="flex-grow-1">
             <div style={{color: 'red'}} className={styles.pointer}>CHANGE ADDRESS!</div>
             <div className='d-flex align-items-center'>
               {custNum(dealers)}
