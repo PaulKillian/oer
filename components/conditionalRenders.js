@@ -4,18 +4,13 @@ import { copy } from "../components/copy.js";
 export const custNum = (category) => {
   if (category.custNumber === "8449560") {
     return (
-    <div id={'custNum'} className={styles.windyHover}
-      onClick={() =>  copy(event, category.custNumber)}>
-        <span style={{color: 'green'}}>Cust#:</span> {category.custNumber}
-    </div>
+    <div className='d-flex align-items-center'>
+          <div id={'custNum'} className={styles.pointer}
+            onClick={() =>  copy(event, category.custNumber)}>Under $100: {category.custNumber}
+          </div>
+         </div>
     )
-  } else if (category.custNumber) {
-    return (
-    <div id={'custNum'} className={styles.pointer}
-      onClick={() =>  copy(event, category.custNumber)}>Cust#: {category.custNumber}
-    </div>
-    )
-  }   
+  }
     else {
     return (
     <div id={styles.hidden}></div>
