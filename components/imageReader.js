@@ -35,29 +35,26 @@ function ImageReader(props) {
 //       values = text.substring(text.indexOf("Part Cost:"));
 //       const partCost = values.substring(0, values.indexOf('http'));
       
-      let values = text.substring(text.indexOf("PO:") + 4);
+      let values = text.substring(text.indexOf("PO:"));
       const po = values.substring(0, values.indexOf('Buyer:'));
       
-      values = text.substring(text.indexOf("Buyer:") + 7);
-      let buyer = values.substring(0, values.indexOf('SKU:'));
-      const forRenderBuyer = {};
+      values = text.substring(text.indexOf("Buyer:"));
+      const buyer = values.substring(0, values.indexOf('SKU:'));
+      console.log(typeof buyer);
+      const toSplitBuyer = [];
       const splitBuyer = buyer.split(' ');
-      const buyerFirst = buyer.substring(0, buyer.indexOf(' '));
-      const buyerLast = buyer.substring(buyer.indexOf("buyerFirst"));
-
-      console.log(forRenderBuyer);
-      values = text.substring(text.indexOf("SKU:") + 5);
+      console.log(splitBuyer)
+      
+      values = text.substring(text.indexOf("SKU:"));
       const sku = values.substring(0, values.indexOf('Part Cost:'));
       
       
       values = text.substring(text.indexOf("Part Cost:"));
       const partCost = values.substring(0, values.indexOf('http'));
 
-      setArrayForFormatting({po, buyerFirst, buyerLast, sku, partCost});
+      setArrayForFormatting({po, buyerFirst, sku, partCost});
     })();
   }
-
-  console.log(arrayForFormatting);
 
   // useEffect(() => {
   //   if(arrayForFormatting) {
@@ -65,6 +62,8 @@ function ImageReader(props) {
   //     values = values.substring(values.indexOf("PO:") + 1);
   //     setArrayForFormatting(values);
   //   }}, [])
+
+  console.log(arrayForFormatting)
 
   return (
     <>
@@ -86,6 +85,9 @@ function ImageReader(props) {
       <>
         <div id='po' className={styles.pointer}
           onClick={() =>  copy(event, arrayForFormatting.po)}>{arrayForFormatting.po}
+        </div>
+        <div id='po' className={styles.pointer}
+          onClick={() =>  copy(event, arrayForFormatting.buyerFirst)}>{arrayForFormatting.po}
         </div>
         <p>{arrayForFormatting.buyer}</p>
         <p>{arrayForFormatting.sku}</p>
