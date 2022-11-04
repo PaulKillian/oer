@@ -49,8 +49,6 @@ function ImageReader(props) {
       const partCost = values.substring(0, values.indexOf('http'));
 
       setArrayForFormatting({po, buyer, sku, partCost});
-
-      setArrayForFormatting({po, buyer, sku, partCost});
     })();
   }
 
