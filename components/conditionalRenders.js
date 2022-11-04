@@ -2,7 +2,7 @@ import styles from "../styles/Home.module.css";
 import { copy } from "../components/copy.js";
 
 export const custNum = (category) => {
-  if (category.custNumber === "8449560") {
+  if (category.custNumber) {
     return (
     <div className='d-flex align-items-center'>
           <div id={'custNum'} className={styles.pointer}
