@@ -87,7 +87,7 @@ function ImageReader(props) {
      {arrayForFormatting &&
       <>
         <div id='po' className={styles.pointer}
-          onClick={() =>  copy(event, arrayForFormatting.po)}>{arrayForFormatting.po}
+          onClick={() =>  copy(event, arrayForFormatting.po)}>{arrayForFormatting.buyerFirst}
         </div>
         <div id='po' className={styles.pointer}
           onClick={() =>  copy(event, arrayForFormatting.buyerFirst)}>{arrayForFormatting.po}
