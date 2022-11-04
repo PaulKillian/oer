@@ -35,26 +35,29 @@ function ImageReader(props) {
 //       values = text.substring(text.indexOf("Part Cost:"));
 //       const partCost = values.substring(0, values.indexOf('http'));
       
-      let values = text.substring(text.indexOf("PO:"));
+      let values = text.substring(text.indexOf("PO:") + 4);
       const po = values.substring(0, values.indexOf('Buyer:'));
       
-      values = text.substring(text.indexOf("Buyer:"));
-      const buyer = values.substring(0, values.indexOf('SKU:'));
-      console.log(typeof buyer);
-      const toSplitBuyer = [];
+      values = text.substring(text.indexOf("Buyer:") + 7);
+      let buyer = values.substring(0, values.indexOf('SKU:'));
+      const forRenderBuyer = {};
       const splitBuyer = buyer.split(' ');
-      console.log(splitBuyer)
-      
-      values = text.substring(text.indexOf("SKU:"));
+      const buyerFirst = buyer.substring(0, buyer.indexOf(' '));
+      const buyerLast = buyer.substring(buyer.indexOf("buyerFirst"));
+
+      console.log(forRenderBuyer);
+      values = text.substring(text.indexOf("SKU:") + 5);
       const sku = values.substring(0, values.indexOf('Part Cost:'));
       
       
       values = text.substring(text.indexOf("Part Cost:"));
       const partCost = values.substring(0, values.indexOf('http'));
 
-      setArrayForFormatting({po, buyer, sku, partCost});
+      setArrayForFormatting({po, buyerFirst, buyerLast, sku, partCost});
     })();
   }
+
+  console.log(arrayForFormatting);
 
   // useEffect(() => {
   //   if(arrayForFormatting) {
@@ -62,8 +65,6 @@ function ImageReader(props) {
   //     values = values.substring(values.indexOf("PO:") + 1);
   //     setArrayForFormatting(values);
   //   }}, [])
-
-  console.log(arrayForFormatting)
 
   return (
     <>
