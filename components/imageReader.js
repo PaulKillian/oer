@@ -40,7 +40,7 @@ function ImageReader(props) {
       
       values = text.substring(text.indexOf("Buyer:"));
       const buyer = values.substring(0, values.indexOf('SKU:'));
-      console.log(buyer)
+      console.log(typeof buyer);
       const toSplitBuyer = [];
       const splitBuyer = buyer.split(' ');
       console.log(splitBuyer)
