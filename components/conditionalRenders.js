@@ -5,10 +5,10 @@ export const custNum = (category) => {
   if (category.custNumber) {
     return (
     <div className='d-flex align-items-center'>
-          <div id={'custNum'} className={styles.pointer}
-            onClick={() =>  copy(event, category.custNumber)}>Cust#: {category.custNumber}
-          </div>
-         </div>
+      <div id={'custNum'} className={styles.pointer}
+        onClick={() =>  copy(event, category.custNumber)}>Cust#: {category.custNumber}
+      </div>
+    </div>
     )
   }
     else {
