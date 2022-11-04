@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Tesseract from 'tesseract.js';
 import Image from 'next/image';
 import windyFormat from './formats.js';
+import copy from './copy.js'
+import styles from "../styles/Home.module.css";
 
 function ImageReader(props) {
   const [orderText, setOrderText] = useState(null);
@@ -64,7 +66,9 @@ function ImageReader(props) {
      {/* <windyFormat array={arrayForFormatting}></windyFormat> */}
      {arrayForFormatting &&
       <>
-        <p>{arrayForFormatting.po}</p>
+        <div id='po' className={styles.pointer}
+          onClick={() =>  copy(event, arrayForFormatting.po)}>{arrayForFormatting.po}
+        </div>
         <p>{arrayForFormatting.buyer}</p>
         <p>{arrayForFormatting.sku}</p>
         <p>{arrayForFormatting.partCost}</p>
