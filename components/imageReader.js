@@ -35,8 +35,11 @@ function ImageReader(props) {
 //       values = text.substring(text.indexOf("Part Cost:"));
 //       const partCost = values.substring(0, values.indexOf('http'));
       
-      let values = text.substring(text.indexOf("PO:") + 4);
-      const po = values.substring(0, values.indexOf('Buyer:'));
+      const getPo = () => { 
+        let values = text.substring(text.indexOf("PO:") + 4);
+        const po = values.substring(0, values.indexOf('Buyer:'));
+        return po
+      }
 
       values = text.substring(text.indexOf("Buyer:") + 7);
       let buyer = values.substring(0, values.indexOf('SKU:'));
@@ -53,7 +56,7 @@ function ImageReader(props) {
       values = text.substring(text.indexOf("Part Cost:"));
       const partCost = values.substring(0, values.indexOf('http'));
 
-      setArrayForFormatting({po, buyerFirst, buyerLast, sku, partCost});
+      setArrayForFormatting({getPo(), buyerFirst, buyerLast, sku, partCost});
     })();
   }
 
