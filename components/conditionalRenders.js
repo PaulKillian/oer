@@ -6,7 +6,7 @@ export const custNum = (category) => {
     return (
     <div className='d-flex align-items-center'>
           <div id={'custNum'} className={styles.pointer}
-            onClick={() =>  copy(event, category.custNumber)}>Under $100: {category.custNumber}
+            onClick={() =>  copy(event, category.custNumber)}>Cust#: {category.custNumber}
           </div>
          </div>
     )
