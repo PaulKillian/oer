@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Tesseract from 'tesseract.js';
 import Image from 'next/image';
 import windyFormat from './formats.js';
-import copy from './copy.js'
+import { copy } from './copy.js'
 import styles from "../styles/Home.module.css";
 
 function ImageReader(props) {
