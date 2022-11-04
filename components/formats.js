@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
 
 export const windyFormat = (props) => {
-  console.log(props.array)
+  console.log('windy', props.array)
 }

@@ -35,7 +35,8 @@ export function Upload() {
     };
         
     return (
-    <div className="d-flex flex-column align-items-center">
+        <>
+          <div className="d-flex flex-column align-items-center">
        <input 
         type="file" 
         name="file" 
@@ -50,11 +51,13 @@ export function Upload() {
             ? <label htmlFor="file">{file}</label>
             : <label htmlFor="file">Choose a file</label>
         }
-        <ImageReader 
-            url={url}
-            file={file}
-        />
         </div>
+        <ImageReader 
+        url={url}
+        file={file}
+    />
+        </>
+  
     );
 };
 

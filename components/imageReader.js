@@ -5,22 +5,13 @@ import windyFormat from './formats.js';
 
 function ImageReader(props) {
   const [orderText, setOrderText] = useState(null);
-  const [arrayForFormatting, setArrayForFormattting] = useState([])
+  const [arrayForFormatting, setArrayForFormatting] = useState(null)
 
   const getOrders = () => {
-//     Tesseract.recognize(
-//         `${props.url.publicUrl}`,
-//         'eng',
-//         { logger: m => console.log(m) }
-//       ).then(({ data: { text } }) => {
-//         setOrderText(text);
-//         return
-//       })
-    
     const { createWorker } = require('tesseract.js');
 
     const worker = createWorker({
-      logger: m => console.log(m), // Add logger here
+      logger: m => console.log(m),
     });
 
     (async () => {
@@ -29,12 +20,31 @@ function ImageReader(props) {
       await worker.initialize('eng');
 //       const { data: { text } } = await worker.recognize(`${props.url.publicUrl}`);
       const { data: { text } } = await worker.recognize(`https://pxdjpkeggdohvscyfpxw.supabase.co/storage/v1/object/public/oer-images/public/2022_10_31_12_36_17-1.jpg`);
-      console.log(text);
       setOrderText(text);
-      setArrayForFormatting(text);
-      await worker.terminate();
+      worker.terminate();
+      
+      let values = text.substring(text.indexOf("PO:"));
+      const po = values.substring(0, values.indexOf('Buyer:'));
+      values = text.substring(text.indexOf("Buyer:"));
+      const buyer = values.substring(0, values.indexOf('SKU:'));
+      const skuRemove = values.split("SKU:").pop();
+      const sku = skuRemove.substring(0, skuRemove.indexOf('Part Cost:'));
+      values = text.substring(text.indexOf("SKU:"));
+      values = text.substring(text.indexOf("Part Cost:"));
+      const partCost = values.substring(0, values.indexOf('http'));
+
+      setArrayForFormatting({po, buyer, sku, partCost});
     })();
   }
+
+  // useEffect(() => {
+  //   if(arrayForFormatting) {
+  //     var values = arrayForFormatting.replace(/\s/g, '');
+  //     values = values.substring(values.indexOf("PO:") + 1);
+  //     setArrayForFormatting(values);
+  //   }}, [])
+
+  console.log(arrayForFormatting)
 
   return (
     <>
@@ -50,8 +60,16 @@ function ImageReader(props) {
           className="btn btn-dark">Get Orders
         </button>
     }
-     <div>{orderText}</div>
-     <div array={arrayForFormatting}>{windyFormat}</div>
+     {/* <div>{orderText}</div> */}
+     {/* <windyFormat array={arrayForFormatting}></windyFormat> */}
+     {arrayForFormatting &&
+      <>
+        <p>{arrayForFormatting.po}</p>
+        <p>{arrayForFormatting.buyer}</p>
+        <p>{arrayForFormatting.sku}</p>
+        <p>{arrayForFormatting.partCost}</p>
+      </>
+      }
     </>
   );
 }
