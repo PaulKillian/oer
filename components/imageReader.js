@@ -7,7 +7,8 @@ import styles from "../styles/Home.module.css";
 
 function ImageReader(props) {
   const [orderText, setOrderText] = useState(null);
-  const [arrayForFormatting, setArrayForFormatting] = useState(null)
+  const [arrayForFormatting, setArrayForFormatting] = useState(null);
+  const [po, setPo] = useState('');
 
   const getOrders = () => {
     const { createWorker } = require('tesseract.js');
@@ -38,7 +39,7 @@ function ImageReader(props) {
       const getPo = () => { 
         let values = text.substring(text.indexOf("PO:") + 4);
         const po = values.substring(0, values.indexOf('Buyer:'));
-        return po
+        setPo(po)
       }
 
       values = text.substring(text.indexOf("Buyer:") + 7);
@@ -90,7 +91,7 @@ function ImageReader(props) {
      {arrayForFormatting &&
       <>
         <div id='po' className={styles.pointer}
-          onClick={() =>  copy(event, arrayForFormatting.po)}>{arrayForFormatting.po}
+          onClick={() =>  copy(event, po)}>{po}
         </div>
         <div id='po' className={styles.pointer}
           onClick={() =>  copy(event, arrayForFormatting.buyerFirst)}>{arrayForFormatting.buyerFirst}
