@@ -1,5 +1,4 @@
-export const copy = (e, toCopy) => {    
-    debugger
+export const copy = (e, toCopy) => { 
     const copiedNode = document.getElementById(e.target.id)
     const copiedBadgeH4 = document.createElement('h4')
     const copiedBadgeSpan = document.createElement('span')
