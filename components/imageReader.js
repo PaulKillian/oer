@@ -41,6 +41,7 @@ function ImageReader(props) {
         const po = values.substring(0, values.indexOf('Buyer:'));
         setPo(po)
       }
+      getPo()
 
       values = text.substring(text.indexOf("Buyer:") + 7);
       let buyer = values.substring(0, values.indexOf('SKU:'));
