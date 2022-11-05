@@ -1,5 +1,5 @@
-export const copy = (e, toCopy) => { 
-    const copiedNode = document.getElementById(e.target.id)
+export const copy = (event, toCopy) => { 
+    const copiedNode = document.getElementById(event.target.id)
     const copiedBadgeH4 = document.createElement('h4')
     const copiedBadgeSpan = document.createElement('span')
     copiedBadgeSpan.innerHTML = 'Copied!'
