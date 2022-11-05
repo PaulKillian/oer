@@ -17,8 +17,8 @@ function ImageReader(props) {
       await worker.load();
       await worker.loadLanguage('eng');
       await worker.initialize('eng');
-//       const { data: { text } } = await worker.recognize(`${props.url.publicUrl}`);
-      const { data: { text } } = await worker.recognize(`https://pxdjpkeggdohvscyfpxw.supabase.co/storage/v1/object/public/oer-images/public/2022_10_31_12_36_17-1.jpg`);
+      const { data: { text } } = await worker.recognize(`${props.url.publicUrl}`);
+      // const { data: { text } } = await worker.recognize(`https://pxdjpkeggdohvscyfpxw.supabase.co/storage/v1/object/public/oer-images/public/2022_10_31_12_36_17-1.jpg`);
       setOrderText(text);
       worker.terminate();
     })();

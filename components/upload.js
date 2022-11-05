@@ -22,27 +22,37 @@ export function Upload() {
     }, [file])
 
     const handleUpload = (event) => {
-        let file;
+        let files;
     
         if (event.target.files) {
-          file = event.target.files[0];
+          files = [event.target.files];
+          console.log(files);
         }
-    
-        const { data, error } = supabase.storage
-          .from("oer-images")
-          .upload("public/" + file?.name, file);
-           setFile(file?.name)
+        files.forEach(async (file, index) => {
+            for (let i = 0; i < file.length; i++) {
+                const fileToUpload = file[i];
+                const { data, error } = await supabase.storage
+                    .from("oer-images")
+                    .upload(`public/${fileToUpload.name}`, fileToUpload);
+                if (data) {
+                    setFile(fileToUpload.name);
+                } else if (error) {
+                    console.log(error);
+                }
+            }
+        })
+        
     };
         
     return (
         <>
           <div className="d-flex flex-column align-items-center">
        <input 
+        multiple
         type="file" 
         name="file" 
         id="file" 
         className={styles.inputfile} 
-        data-multiple-caption="{count} files selected" multiple
         onChange={(event) => {
             handleUpload(event); // 👈 this will trigger when user selects the file.
         }}
