@@ -7,18 +7,22 @@ import ImageReader from "../components/imageReader";
 
 export function Upload() {
     const [file, setFile] = useState(null);
-    const [url, setUrl] = useState(null);
+    const [url, setUrl] = useState([]);
 
     useEffect(() => {
-        const { data, error } = supabase.storage
+        if (file) { 
+          console.log(file)
+          for(let i = 0; i < file.length -1; i++) {
+          const { data, error } = supabase.storage
             .from("oer-images")
-            .getPublicUrl(`public/${file}`);
+            .getPublicUrl(`public/${file[i].name}`);
     
-        if (data) {
-            setUrl(data)
-        } else if (error) {
+          if (data) {
+            setUrl([...url, data.publicUrl])
+          } else if (error) {
             console.log(error);
-        }
+          }
+        }};
     }, [file])
 
     const handleUpload = (event) => {
@@ -26,7 +30,6 @@ export function Upload() {
     
         if (event.target.files) {
           files = [event.target.files];
-          console.log(files);
         }
         files.forEach(async (file, index) => {
             for (let i = 0; i < file.length; i++) {
@@ -35,7 +38,7 @@ export function Upload() {
                     .from("oer-images")
                     .upload(`public/${fileToUpload.name}`, fileToUpload);
                 if (data) {
-                    setFile(fileToUpload.name);
+                    setFile([...file, data.path]);
                 } else if (error) {
                     console.log(error);
                 }
@@ -47,20 +50,20 @@ export function Upload() {
     return (
         <>
           <div className="d-flex flex-column align-items-center">
-       <input 
-        multiple
-        type="file" 
-        name="file" 
-        id="file" 
-        className={styles.inputfile} 
-        onChange={(event) => {
-            handleUpload(event); // 👈 this will trigger when user selects the file.
-        }}
-       />
-        {file
-            ? <label htmlFor="file">{file}</label>
-            : <label htmlFor="file">Choose a file</label>
-        }
+          <input 
+            multiple
+            type="file" 
+            name="file" 
+            id="file" 
+            className={styles.inputfile} 
+            onChange={(event) => {
+                handleUpload(event); // 👈 this will trigger when user selects the file.
+            }}
+        />
+            {file
+                ? <label htmlFor="file">Ready</label>
+                : <label htmlFor="file">Choose a file</label>
+            }
         </div>
         <ImageReader 
         url={url}
