@@ -7,9 +7,12 @@ import { copy } from './copy.js'
 function ImageReader(props) {
   const [orderText, setOrderText] = useState('');
   const [displayText, setDisplayText] = useState([]);
-
+  const [images, setImages] = useState(null);
+  
+  
   const getOrders = () => {
-    props.url.map(async (url) => {
+    let urls = props.url;
+    urls.map(async (url) => {
       const { createWorker } = require('tesseract.js');
       const worker = createWorker({
         logger: m => console.log(m),
@@ -22,9 +25,15 @@ function ImageReader(props) {
       // setOrderText(text);
       setDisplayText([...displayText, text]);
       worker.terminate();
-      console.log(url)
-      document.getElementById('orders').click();
-    });
+
+      if(urls) {
+          setImages(() =>
+            [...urls.shift()]
+          );
+          document.getElementById('orders').click();
+        }     
+    })
+    console.log(urls)
   }
 
   return (
