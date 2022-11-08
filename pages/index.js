@@ -70,7 +70,7 @@ export default function Home() {
               <div className='d-flex align-items-center'>
                 {custNum(dealers)}
               </div>
-              <div>
+              <div className='d-flex align-items-center'>
                 <p id='po' className={styles.pointer}
                   onClick={() =>  copy(event, dealers.po)}>{dealers.po}
                 </p>
@@ -84,7 +84,7 @@ export default function Home() {
               <div>
                 {upsNum(dealers)}
               </div>
-              <div>
+              <div className='d-flex align-items-center'>
                 <div id='dropShip' className={styles.pointer}
                   onClick={() =>  copy(event, dealers.dropShip)}>{dealers.dropShip}
                 </div>

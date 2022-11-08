@@ -7,11 +7,11 @@ import { copy } from './copy.js'
 function ImageReader(props) {
   const [orderText, setOrderText] = useState('');
   const [displayText, setDisplayText] = useState([]);
-  const [images, setImages] = useState(null);
-  
+  const [images, setImages] = useState(props.url);
   
   const getOrders = () => {
     let urls = props.url;
+
     urls.map(async (url) => {
       const { createWorker } = require('tesseract.js');
       const worker = createWorker({
@@ -21,19 +21,19 @@ function ImageReader(props) {
       await worker.loadLanguage('eng');
       await worker.initialize('eng');
       const { data: { text } } = await worker.recognize(`${url}`);
-      // const { data: { text } } = await worker.recognize(`https://pxdjpkeggdohvscyfpxw.supabase.co/storage/v1/object/public/oer-images/public/2022_10_31_12_36_17-1.jpg`);
-      // setOrderText(text);
+
       setDisplayText([...displayText, text]);
       worker.terminate();
 
-      if(urls) {
+     if (images.length === 0) {
+          setImages(null);
+        } else if (urls) {
           setImages(() =>
             [...urls.shift()]
           );
-          document.getElementById('orders').click();
-        }     
+           document.getElementById('orders').click();
+        }
     })
-    console.log(urls)
   }
 
   return (
@@ -44,11 +44,12 @@ function ImageReader(props) {
             type="button" 
             class="btn btn-success"
             onClick={getOrders}
+            setSpinner
             >Get Orders
           </button>
-        : <button 
-            type="button" 
-            className="btn btn-dark">Get Orders
+        : <button class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Loading...
           </button>
       }
       {displayText && windyFormat(displayText)}

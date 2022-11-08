@@ -21,8 +21,10 @@ export const custNum = (category) => {
 export const upsNum = (category) => {
     if (category.upsNumber) {
       return (
-      <div id={'upsNum'} className={styles.pointer}
-        onClick={() =>  copy(event, category.upsNumber)}>Ups#: {category.upsNumber}
+      <div className='d-flex align-items-center'>
+        <div id={'upsNum'} className={styles.pointer}
+          onClick={() =>  copy(event, category.upsNumber)}>Ups#: {category.upsNumber}
+        </div>
       </div>
       )
     } else {
@@ -35,8 +37,10 @@ export const upsNum = (category) => {
 export const truck = (category) => {
     if (category.truck) {
       return (
-      <div id={'truck'} className={styles.pointer}
-        onClick={() =>  copy(event, category.truck)}>{category.truck}
+      <div className='d-flex align-items-center'>
+        <div id={'truck'} className={styles.pointer}
+          onClick={() =>  copy(event, category.truck)}>{category.truck}
+        </div>
       </div>
      )
     } else {
