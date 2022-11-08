@@ -55,3 +55,11 @@ export const partspl = {
     po: 'PO#'
   }
 
+export const partsDiscount = {
+    custNumber: process.env.NEXT_PUBLIC_CAR_PARTS_DISCOUNT_CUST_NUM,
+    dropShip: 'DROPSHIP3',
+    upsNumber: '301357672',
+    po: 'PO#',
+    notes: 'CONTACT CUST ON TRUCK FREIGHT ORDERS'
+  }
+
