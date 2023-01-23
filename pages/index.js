@@ -90,9 +90,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-sm">
-              <Upload />
-            </div>
           </div>
         </div>
       </div>
